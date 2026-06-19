@@ -7,7 +7,7 @@
 
 ## URLs
 - **Production (Cloudflare Pages)**: https://sparkmind-obp.pages.dev
-- **Dev (sandbox)**: https://3000-ikq7qdoruvzii9q8juyox-ad490db5.sandbox.novita.ai
+- **Dev (sandbox)**: https://3000-i3ni21v5yrnmyra7ze0gj-d0b9e1e2.sandbox.novita.ai
 - **GitHub**: https://github.com/ganihypha/Sovereign-Agent-Foundry
 
 ## Tech Stack
