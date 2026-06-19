@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.wrangler/
+.vite/
+
+# Secrets & env — JANGAN PERNAH commit
+.dev.vars
+.env
+.env.*
+*.key
+
+# Logs & PM2
+*.log
+logs/
+.pm2/
+pids/
+*.pid
+
+# OS / editor
+.DS_Store
+*.swp
+
+# Backups
+*.tar.gz
+*.zip
+*.bak

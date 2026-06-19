@@ -1,0 +1,5 @@
+/* SPARKMIND-OBP custom styles */
+html { scroll-behavior: smooth; }
+.product-card { transition: transform .15s ease, border-color .15s ease; }
+.product-card:hover { transform: translateY(-2px); }
+::selection { background: #6366f1; color: #fff; }

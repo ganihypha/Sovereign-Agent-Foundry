@@ -1,0 +1,33 @@
+{
+  "name": "sparkmind-obp",
+  "version": "2.0.0",
+  "description": "SPARKMIND-OBP-HYBRID v2.0 — Sovereign Agent Foundry: marketplace skill dengan Oasis BI Pro sebagai Merchant-of-Record via Duitku (Hono + Cloudflare Pages + D1)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "dev:sandbox": "wrangler pages dev dist --ip 0.0.0.0 --port 3000",
+    "dev:d1": "wrangler pages dev dist --d1=sparkmind-obp-production --local --ip 0.0.0.0 --port 3000",
+    "build": "vite build",
+    "preview": "wrangler pages dev dist",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name sparkmind-obp",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "clean-port": "fuser -k 3000/tcp 2>/dev/null || true",
+    "test": "curl http://localhost:3000",
+    "db:migrate:local": "wrangler d1 migrations apply sparkmind-obp-production --local",
+    "db:migrate:prod": "wrangler d1 migrations apply sparkmind-obp-production",
+    "db:seed": "wrangler d1 execute sparkmind-obp-production --local --file=./seed.sql",
+    "db:reset": "rm -rf .wrangler/state/v3/d1 && npm run db:migrate:local && npm run db:seed",
+    "db:console:local": "wrangler d1 execute sparkmind-obp-production --local"
+  },
+  "dependencies": {
+    "hono": "^4.6.14"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241218.0",
+    "@hono/vite-cloudflare-pages": "^0.4.2",
+    "@hono/vite-dev-server": "^0.17.0",
+    "vite": "^6.0.5",
+    "wrangler": "^3.95.0"
+  }
+}

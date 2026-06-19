@@ -1,0 +1,7 @@
+# SPARKMIND-OBP — contoh environment lokal (salin jadi .dev.vars)
+# Duitku POP — MODE PRODUCTION (uang riil). Untuk testing isolasi gunakan DUITKU_ENV="sandbox".
+DUITKU_MERCHANT_CODE="DXXXXX"
+DUITKU_API_KEY="your-duitku-merchant-key"
+DUITKU_ENV="production"
+DUITKU_CALLBACK_URL="https://your-domain.pages.dev/webhook/duitku"
+DUITKU_RETURN_URL="https://your-domain.pages.dev/thank-you"

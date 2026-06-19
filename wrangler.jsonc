@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sparkmind-obp",
+  "compatibility_date": "2024-12-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "pages_build_output_dir": "./dist",
+
+  // Cloudflare D1 — database relasional (orders, licenses, products, dll)
+  // Buat dulu: npx wrangler d1 create sparkmind-obp-production
+  // Lalu salin database_id hasilnya ke bawah ini.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sparkmind-obp-production",
+      "database_id": "a50feb42-43b0-44df-9fbe-41b1343c948c"
+    }
+  ]
+
+  // Variabel non-rahasia bisa ditaruh di [vars]; RAHASIA (DUITKU_API_KEY)
+  // WAJIB lewat: npx wrangler pages secret put DUITKU_API_KEY
+}
