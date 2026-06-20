@@ -1,88 +1,103 @@
 # SSOT BATCH 5 — OUTCOME FOUNDRY (Index)
 ## SparkMind · Full Pivot: dari "Skill Marketplace" → **Outcome Foundry** (Outcome-as-a-Service)
 
-> v1.0 · 2026-06-20 · **Kanonik & terbaru.** Batch 4 *memutuskan* arah pivot (skill mart →
-> Outcome Foundry) dan mengeksekusi Sprint R1 (kode `/solutions` + `/developers` live).
-> **Batch 5 menuntaskan pivot menjadi SISTEM & MODEL BISNIS kanonik**: riset OaaS/RaaS/SaS
-> dengan angka nyata, definisi sistem, model uang hibrida, mesin delivery + proof, peta
-> eksekusi, dan sintesis lintas batch.
->
-> **Sumber kanonik:** `docs/ssot/batch-5-outcome-foundry/`
+> **Status:** Canonical · **Versi:** v1.0 · **Tanggal:** 2026-06-20
+> **Doctrine induk:** MASTER-ARCHITECT-PROMPT v8.0 · D-1 Truth-Lock · Indonesia-first · Credit-aware
+> **Supersede:** Batch 4 men-*reposition* framing; **Batch 5 menuntaskan pivot** menjadi
+> sistem & model bisnis kanonik **Outcome Foundry** (OaaS). Batch 1–3 tetap berlaku sebagai
+> fondasi teknis/operasional.
+> **Repo kanonik:** https://github.com/ganihypha/Sovereign-Agent-Foundry
 
 ---
 
-## 0. Mengapa Batch 5 ada
+## 0. Mandat owner (verbatim intent)
 
-Batch 4 menjawab *"haruskah kita pivot?"* → **ya**, dan memindahkan permukaan produk ke
-bahasa outcome (B4-07 EXECUTION-LOG). Tapi pivot belum **lengkap sebagai sistem**:
+> *"Kalau kita cuma 'semacam' marketplace, itu gampang ditiru & susah dimonetisasi. Kita
+> harus FULL & TOTAL pivot ke **Outcome Foundry** — bukan jual bahan (skill), tapi jual
+> HASIL. Riset lebih dalam & lebih luas soal **OAAS (Outcome-as-a-Service)** / **RAAS
+> (Result-as-a-Service)** / **SAAS (Service-as-a-Software)**. Lalu upgrade & enhance SEMUA
+> doc canonic / SSOT, tutup gap yang masih miss, sintesis jadi satu sistem & konsep Outcome
+> Foundry. Lalu push ke GitHub."*
 
-- B4-06 (tesis) sengaja **tidak mengutip angka pasti** ("Truth-Lock: tidak klaim statistik tak
-  terverifikasi"). Batch 5 mengisi gap itu dengan **riset bersumber** (Sierra, a16z, Monetizely,
-  Zendesk, Intercom Fin, Salesforce, Gartner, Fin AI) — angka nyata, terverifikasi tanggal.
-- Belum ada **definisi sistem kanonik** "apa itu Outcome Foundry" (lapisan, prinsip, taksonomi,
-  Definition-of-Outcome).
-- Belum ada **model bisnis OaaS** terperinci (value-metric, unit-economics, kapan boleh
-  pindah ke outcome-based pricing).
-- Belum ada **mesin delivery + proof-of-outcome** terdokumentasi end-to-end (pipeline, SLA/TTO,
-  gate kualitas).
-
-Batch 5 = lapisan **pendalaman & penuntasan** di atas B4. Ia **tidak menghapus** B4; ia
-**menyerap & menyempurnakannya**.
+Batch 4 sudah **memutuskan arah** (reposition ke "Outcome Foundry"). Batch 5 **menuntaskan
+pivot**: (a) memvalidasi konsep dengan riset pasar 2025–2026, (b) mendefinisikan **model
+bisnis Outcome-as-a-Service** secara kanonik, (c) menutup gap doc, dan (d) mengikat semua ke
+**kode yang sudah live** (`/solutions`, `/developers`, engine checkout MoR).
 
 ---
 
-## 1. Peta dokumen Batch 5
+## 1. Tesis Batch 5 (1 paragraf)
 
-| # | Dokumen | Isi |
+> Dunia software sedang bergeser dari **SaaS (Software-as-a-Service)** → **Service-as-a-Software
+> (SaS)** → **Outcome/Result-as-a-Service (OaaS/RaaS)**: pelanggan tidak lagi membayar untuk
+> *alat* atau *seat*, melainkan untuk **hasil bisnis yang sudah jadi & terukur**. SparkMind
+> memposisikan diri sebagai **Outcome Foundry pertama untuk pasar Indonesia (UMKM/SMB)** —
+> pabrik yang mengubah masalah bisnis menjadi aplikasi & sistem live, dengan **harga IDR,
+> bahasa Indonesia, dan pembayaran QRIS/VA yang patuh (MoR)**. 36 sovereign skill = **mesin**;
+> yang dijual = **outcome**. Karena pure-outcome punya batas struktural (lihat riset B5-01),
+> model kami adalah **hibrida software + jasa**: Setup (sekali bayar) + Care Plan/AI Staff
+> (langganan) + Done-for-You (jasa) — persis pola yang divalidasi pasar global.
+
+---
+
+## 2. Peta Dokumen Batch 5
+
+| Kode | Judul | Pertanyaan yang dijawab |
 |---|---|---|
-| **B5-00** | **[INDEX](B5-00-INDEX.md)** (dok ini) | Peta Batch 5, tesis pivot, non-negotiables, status |
-| **B5-01** | **[OAAS-RESEARCH](B5-01-OAAS-RESEARCH-DOC.md)** | Riset OaaS/RaaS/Service-as-a-Software 2025–2026 — definisi, tren, **angka nyata bersumber**, pesaing, batas struktural |
-| **B5-02** | **[OUTCOME-FOUNDRY-CONCEPT](B5-02-OUTCOME-FOUNDRY-CONCEPT-DOC.md)** | Definisi sistem 3-lapis, 7 prinsip kanonik, mesin→outcome, taksonomi outcome, **Definition-of-Outcome (DoO)** |
-| **B5-03** | **[OUTCOME-BUSINESS-MODEL](B5-03-OUTCOME-BUSINESS-MODEL-DOC.md)** | Pricing hibrida, value-metric, unit-economics, garansi, kapan boleh pindah ke outcome-based |
-| **B5-04** | **[OUTCOME-DELIVERY-ENGINE](B5-04-OUTCOME-DELIVERY-ENGINE-DOC.md)** | Pipeline skill→app (F0–F7), SLA/TTO, **proof-of-outcome**, gate kualitas, HITL |
-| **B5-05** | **[PIVOT-EXECUTION-MAP](B5-05-PIVOT-EXECUTION-MAP-DOC.md)** | Status kode live, gap tertutup vs terbuka, roadmap R2–R5, Definition-of-Done pivot |
-| **B5-06** | **[GAP-CLOSURE-AND-SYNTHESIS](B5-06-GAP-CLOSURE-AND-SYNTHESIS-DOC.md)** | Sintesis Batch 1–5, peta supersede, gap masih terbuka, satu kalimat kanonik |
+| **B5-00** | Index (dok ini) | Apa pivot-nya & bagaimana semua dokumen terhubung? |
+| **B5-01** | **[OAAS-RESEARCH](B5-01-OAAS-RESEARCH-DOC.md)** | Riset OaaS/RaaS/SaS 2025–2026: definisi, tren, angka, pesaing, batas struktural |
+| **B5-02** | **[OUTCOME-FOUNDRY-CONCEPT](B5-02-OUTCOME-FOUNDRY-CONCEPT-DOC.md)** | Definisi sistem & konsep "Outcome Foundry": prinsip, mesin→outcome, taksonomi |
+| **B5-03** | **[OUTCOME-BUSINESS-MODEL](B5-03-OUTCOME-BUSINESS-MODEL-DOC.md)** | Model bisnis OaaS: pricing hibrida, unit-economics, value-metric, guarantee |
+| **B5-04** | **[OUTCOME-DELIVERY-ENGINE](B5-04-OUTCOME-DELIVERY-ENGINE-DOC.md)** | Bagaimana outcome di-*deliver*: pipeline skill→app, SLA, proof-of-outcome |
+| **B5-05** | **[PIVOT-EXECUTION-MAP](B5-05-PIVOT-EXECUTION-MAP-DOC.md)** | Status kode (sudah live) + gap tertutup + roadmap R1–R5 + DoD pivot |
+| **B5-06** | **[GAP-CLOSURE-AND-SYNTHESIS](B5-06-GAP-CLOSURE-AND-SYNTHESIS-DOC.md)** | Sintesis semua batch + daftar gap yang ditutup + apa yang masih open |
 
 ---
 
-## 2. Tesis pivot (satu paragraf kanonik)
+## 3. Non-Negotiables Batch 5
 
-> **SparkMind adalah Outcome Foundry untuk UMKM/SMB Indonesia.** Kami tidak menjual *bahan*
-> (file skill, akses tool, jam kerja) — kami menjual **hasil bisnis yang sudah jadi & jalan**
-> (aplikasi, otomasi, sistem) sebagai **Outcome-as-a-Service (OaaS)**. **36 sovereign skill =
-> mesin** di belakang layar; yang dibeli pasar = **outcome**, dikemas sebagai paket **hibrida**
-> (Setup sekali bayar + langganan Care Plan/AI Staff + jasa Done-for-You). Pembayaran lokal
-> **QRIS/VA** lewat **Oasis BI Pro (OBP)** sebagai **Merchant-of-Record (MoR)** via **Duitku**
-> (PRODUCTION, uang riil). Jalur developer (skill mentah) tetap ada sebagai **proof &
-> top-of-funnel** di `/developers`.
-
----
-
-## 3. Non-negotiables (pagar Batch 5)
-
-1. **Truth-Lock di setiap janji.** Outcome hanya boleh dijanjikan jika ada **mesin nyata** yang
-   mendukungnya (lihat peta 9 solusi → skill di B4-07 §4). Tidak ada outcome "kosong".
-2. **Hibrida dulu, pure-outcome belakangan.** Riset (B5-01) membuktikan *pure outcome pricing*
-   punya batas struktural (atribusi & prediktabilitas). Default kita = **deterministik hibrida**;
-   outcome-based pricing hanya **pilot** setelah measurement + proof + kontrak matang.
-3. **Indonesia-first.** Bahasa Indonesia, harga IDR, QRIS/VA, kepatuhan lokal (UU PDP, MoR).
-4. **Zero perubahan merusak.** Stack (Hono + CF Pages + D1), MoR (OBP), Duitku, skema DB **tidak
-   berubah** — pivot = kemasan, pasar, bahasa, harga. (Sesuai B4-05/B4-07.)
-5. **Dual-front.** Pintu mainstream (UMKM/SMB) = mesin uang utama; pintu developer = proof &
-   funnel. Keduanya hidup berdampingan.
+1. **Jual outcome, bukan bahan.** Halaman publik (`/`, `/solutions`) berbicara hasil; jalur
+   skill mentah disembunyikan ke `/developers` (proof & top-of-funnel).
+2. **Hibrida by design.** Tidak ada janji *pure outcome* tanpa komponen jasa/langganan —
+   karena riset membuktikan pure-outcome punya batas struktural (atribusi, prediktabilitas).
+3. **Truth-Lock pada janji hasil.** "Outcome" yang dijual = yang benar-benar bisa dirakit
+   dari 36 skill + pipeline `fullstack-cycle`. Tidak ada hasil fiktif.
+4. **Value-metric jujur & terukur.** Tiap outcome punya metrik bukti (app live, CSAT, jam
+   admin dihemat) yang bisa ditunjukkan ke pembeli (proof-of-outcome).
+5. **100% Cloudflare-Native + MoR patuh.** Pivot mengubah *model & kemasan*, BUKAN stack.
+   Edge SSR (Hono+Pages) + D1 + Duitku/OBP (PRODUCTION) tetap.
+6. **Dual-front tetap.** Pasar massal (UMKM/SMB) = mesin uang; developer = proof. Keduanya
+   pakai engine checkout & MoR yang sama.
+7. **Credit-aware & HITL.** Eksekusi hemat; perubahan payment/legal/harga tetap lewat gate owner.
 
 ---
 
-## 4. Status Batch 5
+## 4. Hubungan dengan SSOT lain (peta supersede & enrich)
 
-- [x] Riset OaaS/RaaS/SaS bersumber & ber-angka (B5-01).
-- [x] Definisi sistem "Outcome Foundry" kanonik (B5-02).
-- [x] Model bisnis OaaS + unit-economics (B5-03).
-- [x] Mesin delivery + proof-of-outcome (B5-04).
-- [x] Peta eksekusi + roadmap R2–R5 (B5-05).
-- [x] Sintesis lintas batch + peta supersede (B5-06).
-- [x] `00-SSOT-CANONICAL-INDEX.md` + `README.md` menunjuk Batch 5.
-- [x] Build hijau, smoke test route live, **commit & push** ke `Sovereign-Agent-Foundry`.
+```
+Batch 1 (00–13)  → fondasi produk + teknis + monetisasi v1   [TETAP — jadi mesin]
+Batch 2 (B2)     → operasional 1-sesi/1-agent (runbook)        [TETAP — delivery engine]
+Batch 3 (B3)     → skala / AaaS metrik / onboarding / insiden  [TETAP — diperluas OaaS]
+Batch 4 (B4)     → KEPUTUSAN reposition (skill→outcome)         [DISERAP ke B5]
+Batch 5 (B5)     → TUNTASKAN pivot = sistem & model OaaS        [KANONIK saat ini] ⭐
+```
+
+- **Menyerap & melanjutkan:** B4-01..B4-05 (reposition → kini jadi konsep+model+eksekusi).
+- **Memperkaya:** 05-MONETIZATION (→ B5-03 OaaS pricing), 03-ARCHITECT (→ B5-04 delivery),
+  B3-01 METRIK-AAAS (→ value-metric outcome).
+- **Diturunkan ke eksekusi:** B5-05 → 12-TODO-ROADMAP, B2-04 (sprint), B3 (skala).
+
+> **Urutan baca disarankan:** B5-00 → B5-01 → B5-02 → B5-03 → B5-04 → B5-05 → B5-06.
+
+---
+
+## 5. Definisi "pivot tuntas" (ringkas; detail di B5-05)
+
+- [x] Landing `/` & `/solutions` berbicara **outcome** (kode live, build hijau).
+- [x] **9 SKU outcome** terdefinisi lintas 4 tier (vertical/subscription/high-ticket/education).
+- [x] Engine checkout MoR menerima SKU solusi (care-plan, ai-staff, course, template).
+- [x] Jalur developer (`/developers`, `/foundry`) tetap ada sebagai proof.
+- [x] **Batch 5 doc kanonik** (B5-00..06) menyatukan riset + konsep + model + eksekusi.
+- [ ] SSOT 06/07/08 ditandai supersede; README & index diperbarui (B5 + commit & push).
 
 > Detail riset → **B5-01**. Definisi sistem → **B5-02**. Uang → **B5-03**.
-> Delivery & proof → **B5-04**. Eksekusi → **B5-05**. Sintesis → **B5-06**.

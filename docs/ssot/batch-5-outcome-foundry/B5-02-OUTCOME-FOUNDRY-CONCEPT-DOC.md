@@ -1,118 +1,120 @@
 # B5-02 · OUTCOME-FOUNDRY-CONCEPT-DOC — Definisi Sistem & Konsep
 ## SparkMind · SSOT Batch 5 · "Outcome Foundry" sebagai sistem kanonik
 
-> v1.0 · 2026-06-20 · Fokus: mendefinisikan **apa itu Outcome Foundry** sebagai sistem —
-> lapisan, prinsip, alur mesin→outcome, taksonomi, dan **Definition-of-Outcome (DoO)**.
->
-> **Sumber kanonik:** `docs/ssot/batch-5-outcome-foundry/B5-02-OUTCOME-FOUNDRY-CONCEPT-DOC.md`
+> v1.0 · 2026-06-20 · Fokus: apa itu Outcome Foundry secara sistem (bukan slogan), prinsip
+> kanonik, model "mesin → outcome", taksonomi outcome, dan kontrak kualitas.
 
 ---
 
-## 1. Definisi kanonik
+## 1. Definisi kanonik (satu kalimat)
 
-> **Outcome Foundry** = *pabrik (foundry) yang mengubah masalah bisnis nyata menjadi hasil yang
-> sudah jadi & jalan (outcome), dirakit otomatis dari mesin 36 sovereign skill, dikirim sebagai
-> layanan (OaaS) dengan pembayaran lokal yang patuh.*
+> **Outcome Foundry** adalah **pabrik hasil bisnis**: sistem yang menerima *masalah/kebutuhan
+> bisnis* sebagai input dan mengeluarkan **hasil yang sudah jadi & berjalan** (aplikasi,
+> otomasi, sistem) sebagai output — dirakit secara agentik dari **36 sovereign skill** di atas
+> **infrastruktur edge Cloudflare**, dengan **pembayaran lokal patuh (MoR Oasis BI Pro/Duitku)**.
 
-Analogi: **foundry** = pengecoran logam — bahan mentah (skill) dilebur & dicetak menjadi
-**produk jadi** (outcome) sesuai cetakan (Definition-of-Outcome). Pembeli tidak melihat logam
-mentah; ia menerima **barang jadi yang berfungsi**.
+Singkatnya: **Input = masalah. Output = outcome (live). Mesin = skill agentik. Rel uang = MoR.**
 
 ---
 
-## 2. Sistem 3-lapis (arsitektur konsep)
+## 2. Tiga lapis sistem (anatomi Outcome Foundry)
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│ LAPIS 3 — PASAR (yang dilihat & dibeli pelanggan)            │
-│ Outcome: "Kasir+Booking jalan", "CS otomatis", "Mesin Konten"│
-│ Bahasa Indonesia · harga IDR · QRIS/VA · /solutions          │
-├─────────────────────────────────────────────────────────────┤
-│ LAPIS 2 — FOUNDRY (perakitan & delivery)                     │
-│ Pipeline skill→app · DoO · proof-of-outcome · MoR (OBP/Duitku)│
-│ Gate kualitas (verify-rubric, Truth-Lock, HITL)              │
-├─────────────────────────────────────────────────────────────┤
-│ LAPIS 1 — MESIN (tak terlihat pasar)                         │
-│ 36 sovereign skill · fullstack-cycle · orchestrator · C-Suite│
-│ Cloudflare-native (Hono+Pages+D1) · /developers (proof)      │
-└─────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│  LAPIS 1 — PASAR (yang dilihat pembeli)                          │
+│  "SparkMind — bikin bisnismu otomatis & online."                 │
+│  Objek: OUTCOME (Toko Online, Kasir+Booking, CS Auto, Konten,    │
+│         Event/Tiket, Donasi, Admin Otomasi, App Custom, AI Co.)  │
+│  Bahasa: manfaat · kecepatan · IDR · QRIS · "hari, bukan bulan"  │
+├─────────────────────────────────────────────────────────────────┤
+│  LAPIS 2 — FOUNDRY (mesin perakit)                               │
+│  Pipeline: intake → orchestration → fullstack-cycle → deploy     │
+│  Bahan: 36 sovereign skill (Pack A teknis + Pack B agentic-team) │
+│  Quality gate: verify-rubric · zero-trust · credit-aware (HITL)  │
+├─────────────────────────────────────────────────────────────────┤
+│  LAPIS 3 — REL (infra + uang + kepatuhan)                        │
+│  Edge: Hono + Cloudflare Pages + D1   ·   Uang: Duitku (QRIS/VA) │
+│  MoR: Oasis BI Pro (disclosure + brand_ledger)  ·  UU PDP/refund │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-- **Lapis 1 (Mesin):** aset teknis. Dijual mentah hanya di `/developers` (proof & funnel).
-- **Lapis 2 (Foundry):** tempat skill **dirakit** jadi outcome + dikirim + dibuktikan + dibayar.
-- **Lapis 3 (Pasar):** kemasan outcome berbahasa awam untuk UMKM/SMB. Inilah mesin uang utama.
+> Pembeli hanya berinteraksi dengan **Lapis 1**. Developer/partner boleh masuk **Lapis 2**
+> (`/developers`, `/foundry`). Lapis 3 invisible tapi menjadi **moat** (sulit ditiru).
 
 ---
 
-## 3. Tujuh prinsip kanonik
+## 3. Prinsip kanonik Outcome Foundry (7 prinsip)
 
-1. **Jual hasil, bukan bahan.** Yang dijual ke pasar = outcome (Lapis 3); skill = mesin (Lapis 1).
-2. **Truth-Lock.** Tidak ada outcome dijanjikan tanpa skill nyata pendukungnya.
-3. **Hibrida by default.** Setup + langganan + jasa; outcome-based hanya pilot terukur (B5-03).
-4. **Indonesia-first.** Bahasa, harga, rel pembayaran, kepatuhan = lokal.
-5. **Proof-of-outcome wajib.** Setiap delivery menghasilkan bukti hasil (B5-04 §5).
-6. **HITL pada keputusan berisiko.** Manusia menyetujui sebelum hal yang tak bisa dibatalkan.
-7. **Credit-aware & edge-native murah.** Margin sehat di harga lokal (Cloudflare, tanpa VPS idle).
-
----
-
-## 4. Alur mesin → outcome (ringkas)
-
-```
-Masalah bisnis  →  pilih Outcome SKU  →  Foundry merakit (skill)  →
-  →  deploy ke akun klien  →  proof-of-outcome  →  Care Plan (terus jalan)
-```
-
-Detail teknis pipeline (F0–F7) ada di **B5-04**. Di sini cukup ditegaskan: **pelanggan masuk
-lewat masalah** (bukan lewat daftar skill), dan **keluar dengan sistem yang jalan + bukti**.
+1. **Outcome > output > fitur.** Kita jual *hasil bisnis* ("kasir online jalan"), bukan
+   *deliverable teknis* ("repo Hono"), apalagi *fitur* ("ada D1").
+2. **Deterministik dulu, probabilistik kemudian.** Outcome awal = yang pasti bisa di-deliver
+   (app berfungsi). Outcome probabilistik (CSAT, konversi) = lapisan langganan/jasa, bukan janji utama.
+3. **Mesin sama, kemasan beda.** Satu skill = banyak SKU. Tidak menambah mesin untuk menambah produk.
+4. **Hibrida wajib.** Setiap outcome punya jalur **DIY → Setup → DFY** & opsi **langganan**
+   (lihat B5-03). Tidak ada pure-outcome telanjang.
+5. **Proof melekat.** Setiap outcome menghasilkan **bukti** (URL app live, dashboard metrik,
+   laporan) — karena di outcome economy *trust & proof* adalah diferensiator.
+6. **Indonesia-first.** Bahasa, harga, pembayaran, contoh kasus = konteks Indonesia.
+7. **Truth-Lock.** Hanya menjual outcome yang benar-benar bisa dirakit dari kapabilitas nyata.
 
 ---
 
-## 5. Taksonomi outcome (yang dijual SparkMind)
+## 4. Model "mesin → outcome" (mapping 36 skill → 9 SKU)
 
-Mengikat ke `src/data/solutions.ts` (live). 4 tier:
+> Detail per-skill ada di B4-05 (Migration Map). Ringkas kanonik:
 
-| Tier | Apa yang dibeli | Contoh SKU live | Model harga |
+| Outcome SKU (Lapis 1) | Mesin skill utama (Lapis 2) | Brand (Layer 3) |
+|---|---|---|
+| Kasir + Booking Jasa Lokal | fullstack-cycle, cf-byok-deploy, workflow-ops | BarberKas |
+| Toko Online + CS Otomatis | fullstack-cycle, squad-sales-cs, hermes-memory | (SparkMind) |
+| Mesin Konten & Promo | squad-marketing, gtm-engineering, cmo | PaceLokal |
+| Sistem Event, Tiket & RSVP | fullstack-cycle, claw-actuation | MomentKas |
+| Sistem Donasi & Keanggotaan | fullstack-cycle, zero-trust, legal | Nurani.OS |
+| Otomasi Admin & Dokumen | squad-opsfinance, kuratorkas, memory-dreaming | KuratorKas |
+| Aplikasi Custom (DFY) | fullstack-cycle + C-Suite + squads | SparkMind Core |
+| AI Company in a Box | team-boot + orchestrator + C-Suite + squads | SparkMind Core |
+| Canon Course (edukasi) | master-boot, specialists, context-injection | SparkMind |
+
+> Transparansi mesin (`engineSkills`) ditampilkan di halaman solusi sebagai *proof* untuk
+> developer/partner — tanpa membebani pembeli mainstream.
+
+---
+
+## 5. Taksonomi outcome (4 tier — sudah di kode `SOLUTION_TIERS`)
+
+| Tier | Definisi | Contoh SKU | Peran bisnis |
 |---|---|---|---|
-| **Vertical** | Produk jadi per jenis bisnis | Kasir+Booking, Toko Online+CS, Mesin Konten, Event/Tiket, Donasi/Keanggotaan, Otomasi Admin | Setup (Rp1.5jt) + DIY (Rp490k) |
-| **Subscription** | Sistem yang terus bekerja & terawat | Care Plan (Rp199k/bln), AI Staff CS/Marketing/Admin (Rp490k/bln) | Langganan (MRR) |
-| **High-ticket** | Done-for-You penuh | Aplikasi Custom (mulai Rp5jt), AI Company in a Box (mulai Rp12jt) | Proyek (jasa) |
-| **Education** | Belajar membangun sendiri | Canon Course ID (Rp349k) | One-time (tripwire) |
+| **vertical** | App vertikal kepala-pantai (problem nyata, ICP bisa disebut) | Kasir+Booking, Toko Online | Akuisisi & land |
+| **subscription** | Langganan "AI Staff" / Care Plan (outcome berkelanjutan) | AI Staff CS/Marketing/Admin, Care Plan | Retensi & MRR |
+| **high-ticket** | App custom & AI Company in a Box (jasa besar) | App Custom, AI Company | AOV besar & expand |
+| **education** | Tripwire edukasi (Canon Course) | Canon Course | Top-of-funnel & trust |
 
-> Outcome ≠ acak: tiap SKU punya **promise → problem → ICP → outcomes → engineSkills → plan →
-> ETA** (struktur `Solution` di `solutions.ts`). Inilah "cetakan" foundry.
-
----
-
-## 6. Definition of Outcome (DoO) — kontrak hasil
-
-Sebelum sebuah outcome dijual, ia **wajib** punya DoO: definisi *kapan hasil dianggap tercapai*.
-DoO = jembatan antara janji (Lapis 3) dan bukti (Lapis 2).
-
-**Template DoO (per SKU):**
-
-| Field | Contoh (Kasir+Booking) |
-|---|---|
-| **Outcome statement** | "Bisnis bisa menerima booking & catat transaksi online." |
-| **Kriteria selesai (terukur)** | App live di domain klien; ≥1 booking & ≥1 transaksi tercatat di D1. |
-| **Bukti yang diserahkan** | URL live + screenshot data + akses admin + ringkasan setup. |
-| **Bukan termasuk** | Iklan berbayar, isi konten harian (itu Care Plan/AI Staff). |
-| **SLA / ETA** | Sesuai field `eta` di `solutions.ts`. |
-| **Skill mesin** | Sesuai `engineSkills` (Truth-Lock, lihat B4-07 §4). |
-
-> **Aturan emas:** *No DoO, no sale.* Outcome tanpa DoO = janji kosong → dilarang (Truth-Lock).
+> Pola pertumbuhan: **education/vertical (land) → subscription (retensi) → high-ticket (expand)**.
 
 ---
 
-## 7. Pemetaan ke doktrin lama (kompatibel, bukan reset)
+## 6. Kontrak kualitas outcome (Definition of Outcome — "DoO")
 
-| Konsep lama | Diserap menjadi (Outcome Foundry) |
+Sebuah pesanan dianggap **outcome ter-deliver** bila:
+
+- [ ] Hasil **berfungsi & dapat diakses** (URL live / akses produk aktif).
+- [ ] **Bukti** diberikan (screenshot/URL/dashboard/laporan) ke pembeli.
+- [ ] **Bahasa Indonesia** & sesuai konteks pembeli.
+- [ ] Pembayaran **tercatat di MoR** (brand_ledger) & faktur terkirim.
+- [ ] Bila langganan: **handoff onboarding** (B3-02) dilakukan.
+- [ ] Lulus **verify-rubric** (tidak ada klaim palsu / Truth-Lock).
+
+> DoO ini menjadi gate sebelum order ditandai "selesai" — turunannya di B5-04 (delivery) & B2 (runbook).
+
+---
+
+## 7. Apa yang berubah vs tetap (vs konsep lama)
+
+| Berubah (Batch 5) | Tetap |
 |---|---|
-| Marketplace skill (`.zip`) | **Lapis 1 (mesin)** + `/developers` (proof) |
-| 4-Layer Hybrid Lock (Brand/Merchant/Domain/Compliance) | Tetap berlaku; jadi **fondasi Lapis 2** (MoR/kepatuhan) |
-| Sub-brand (SparkMind/PaceLokal/KuratorKas/dll) | **Domain** outcome per vertikal (Lapis 3) |
-| "Build hijau" (kualitas) | Naik level → **Definition-of-Outcome (DoO)** |
-| Jargon teknis | Diterjemahkan → **bahasa outcome awam** (Lapis 3) |
+| Identitas: "marketplace skill" → **"Outcome Foundry (OaaS)"** | 36 skill sebagai mesin |
+| Konsep jual: bahan → **hasil deterministik + langganan + jasa** | Cloudflare-native + MoR |
+| Bahasa kanonik: jargon → **outcome + proof** | D-1 Truth-Lock, HITL, credit-aware |
+| Kualitas: "build hijau" → **Definition of Outcome (DoO)** | brand_ledger / compliance |
 
-> Lanjut: model uang (pricing hibrida + unit-economics) → **B5-03**; cara deliver & proof →
-> **B5-04**; status & roadmap → **B5-05**.
+> Lanjut: model uang → **B5-03**; cara deliver & proof → **B5-04**; status & roadmap → **B5-05**.

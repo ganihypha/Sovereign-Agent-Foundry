@@ -1,88 +1,103 @@
 # B5-04 · OUTCOME-DELIVERY-ENGINE-DOC — Cara Outcome Di-deliver
-## SparkMind · SSOT Batch 5 · Pipeline skill→app, SLA/TTO, proof-of-outcome
+## SparkMind · SSOT Batch 5 · Pipeline skill→app, SLA, proof-of-outcome
 
-> v1.0 · 2026-06-20 · Fokus: **mesin pengiriman** — bagaimana 36 skill dirakit menjadi outcome
-> jadi, dengan SLA, gate kualitas, dan bukti hasil. Ini "Lapis 2" dari B5-02 secara operasional.
->
-> **Sumber kanonik:** `docs/ssot/batch-5-outcome-foundry/B5-04-OUTCOME-DELIVERY-ENGINE-DOC.md`
+> v1.0 · 2026-06-20 · Fokus: **bagaimana** Outcome Foundry benar-benar mengubah pesanan
+> menjadi hasil live, lengkap dengan SLA, gate kualitas, dan bukti (proof-of-outcome).
+> Diturunkan dari B2 (runbook 1-sesi/1-agent) + fullstack-cycle + verify-rubric.
 
 ---
 
-## 1. Pipeline F0–F7 (masalah → outcome terbukti)
+## 1. Pipeline delivery kanonik (intake → outcome live)
 
-| Fase | Nama | Aktivitas | Skill mesin |
+```
+F0 INTAKE        Pembeli isi /api/intake (masalah, vertikal, kontak) → tiket.
+   │             Gate: klasifikasi outcome (SKU mana) + Truth-Lock (bisa di-deliver?).
+F1 SCOPE         Tentukan DoO (Definition of Outcome) + plan (DIY/Setup/DFY) + harga.
+   │             Gate HITL bila high-ticket/legal/harga custom.
+F2 PAY           Checkout via engine MoR (Duitku QRIS/VA). brand_ledger tercatat.
+   │             one-time → otomatis; high-ticket → invoice.
+F3 ASSEMBLE      Foundry merakit: orchestration → fullstack-cycle (skill terkait SKU).
+   │             credit-aware: hemat token; zero-trust: secrets aman.
+F4 DEPLOY        Deploy ke Cloudflare Pages (akun klien / sub-path). App jadi LIVE.
+   │             Gate: verify-rubric (berfungsi? Bhs Indonesia? tak ada klaim palsu?).
+F5 PROOF         Kirim bukti: URL live + screenshot + dashboard/laporan + faktur email.
+   │             Gate: DoO terpenuhi → order "selesai".
+F6 ONBOARD       (bila langganan) handoff onboarding (B3-02): cara pakai + Care Plan aktif.
+F7 RETAIN        Care Plan / AI Staff jalan: update, support, output bulanan.
+```
+
+> F0–F5 = **land** (outcome deterministik). F6–F7 = **retain/expand** (langganan + jasa).
+
+---
+
+## 2. Mode delivery (DIY / DWY / DFY)
+
+| Mode | Siapa kerja | SLA target *est.* | SKU contoh |
 |---|---|---|---|
-| **F0** | **Intake** | Pelanggan pilih Outcome SKU (`/solutions/:slug`) atau isi intake DFY (`/api/intake`). | — |
-| **F1** | **Scope & DoO** | Tetapkan Definition-of-Outcome (B5-02 §6): kriteria selesai + bukti + non-scope. | verify-rubric, cofounder |
-| **F2** | **Bayar (MoR)** | Checkout → Duitku (QRIS/VA) → webhook → order PAID di D1. | duitku, gateway (live) |
-| **F3** | **Rakit** | Orchestrator memanggil skill sesuai `engineSkills` SKU → bangun app/otomasi. | orchestrator, fullstack-cycle, squad-* |
-| **F4** | **Deploy** | Pasang ke akun/domain klien (BYOK Cloudflare). | cf-byok-deploy, github-push |
-| **F5** | **Verifikasi (gate)** | Cek DoO terpenuhi; Truth-Lock; HITL untuk hal berisiko. | verify-rubric, zero-trust |
-| **F6** | **Proof-of-outcome** | Serahkan bukti hasil (URL live, data, akses, ringkasan). | hermes-memory |
-| **F7** | **Care (langganan)** | Care Plan/AI Staff jalan terus + monitoring + update. | workflow-ops, n8n-workflow, credit-aware |
+| **DIY** (do-it-yourself) | Pembeli (kami sediakan template/akses) | instan (otomatis) | Template, Canon Course, Bundle |
+| **DWY** (done-with-you) | Bareng (kami pasang, pembeli ikut) | 1–3 hari kerja | Setup app vertikal |
+| **DFY** (done-for-you) | Kami penuh | 3–10 hari kerja (scope) | App Custom, AI Company, AI Staff |
 
-> Pemetaan 9 solusi → skill spesifik = **B4-07 §4** (Truth-Lock). Tidak diulang di sini.
+> SLA = **Time-to-Outcome (TTO)**. Diferensiator inti: *hari, bukan bulan* vs freelancer/agency.
 
 ---
 
-## 2. SLA & Time-to-Outcome (TTO)
+## 3. Proof-of-Outcome (bukti = produk)
 
-- **TTO** = waktu dari F2 (bayar) → F6 (proof diserahkan). Ditargetkan per tier:
-  - **Vertical (Setup):** cepat (template + deploy) — sesuai field `eta` di `solutions.ts`.
-  - **High-ticket (DFY):** lebih lama (scope custom) — disepakati di DoO.
-- **Langganan (Care Plan/AI Staff):** SLA respons & uptime mengikuti `/legal` + B3 (operasional).
-- **KPI:** TTO median, % order lulus DoO percobaan pertama, refund-rate, retensi langganan.
+> Di outcome economy, **trust & proof adalah diferensiator utama** (riset B5-01). Maka bukti
+> bukan after-thought — ia bagian dari deliverable.
 
----
+**Artefak bukti per pesanan:**
+1. **URL live** hasil (app/toko/event/donasi/landing).
+2. **Screenshot/rekaman** outcome berfungsi.
+3. **Dashboard/laporan metrik** (transaksi pertama, balasan CS, konten terbit, jam dihemat).
+4. **Acceptance checklist** (DoO ter-centang) ditandatangani pembeli (digital).
+5. **Faktur + disclosure MoR** (Oasis BI Pro) via email.
 
-## 3. Gate kualitas (apa yang menahan rilis)
-
-Tidak ada outcome dikirim sebelum lolos gate:
-
-1. **DoO gate (F5):** semua kriteria "selesai" terpenuhi & terukur.
-2. **Truth-Lock gate:** klaim = kenyataan; tidak ada fitur "diakui" yang tak ada.
-3. **HITL gate:** keputusan tak-bisa-dibatalkan (deploy produksi, kirim uang, hapus data)
-   butuh persetujuan manusia.
-4. **Compliance gate:** sesuai brand_ledger + UU PDP + MoR (data pelanggan aman).
+**Aset bukti publik (untuk GTM):**
+- **Case study** per vertikal (anonim bila perlu) → halaman `/solutions/:slug` & landing.
+- **Galeri hasil** (sebelum/sesudah) → trust mainstream.
 
 ---
 
-## 4. Proof-of-outcome (bukti yang diserahkan)
+## 4. Gate kualitas (Definition of Outcome enforcement)
 
-Inti diferensiasi OaaS (B5-01 §5). Setiap delivery menghasilkan **paket bukti**:
+Sebelum order ditandai **selesai**, jalankan gate (turunan `sovereign-verify-rubric`):
 
-| Komponen bukti | Contoh |
-|---|---|
-| **URL live** | `https://<klien>.pages.dev` berfungsi |
-| **Snapshot data** | screenshot/record di D1 (mis. 1 booking, 1 transaksi) |
-| **Akses** | kredensial admin diserahkan ke klien |
-| **Ringkasan setup** | apa yang dibangun, skill yang dipakai (transparansi mesin) |
-| **Metrik awal** (jika ada) | mis. waktu respons CS, jumlah lead |
-
-> Proof = aset pemasaran juga: dengan izin klien → **case study** (bahan trust untuk
-> calon pembeli berikutnya). Memenuhi DoD B4-06 §7 ("rakit 2–3 case study").
-
----
-
-## 5. Peran agentik (siapa mengerjakan apa)
-
-| Aktor | Tugas | Skill |
+| Gate | Cek | Lulus bila |
 |---|---|---|
-| **Orchestrator** | Pecah outcome → tugas → panggil skill | orchestrator, master-boot |
-| **C-Suite agents** | Keputusan strategis (untuk AI Company) | cofounder, cto, cmo, cfo, coo, cpo |
-| **Squads** | Eksekusi domain (eng/marketing/product/sales-cs/opsfinance) | squad-* |
-| **Verifier** | Gate DoO & Truth-Lock | verify-rubric, zero-trust |
-| **Memory** | Konteks lintas sesi & proof | hermes-memory, memory-dreaming |
-| **Operator manusia (HITL)** | Setujui hal berisiko, jaga kualitas | — |
+| **Fungsi** | Hasil bisa diakses & berfungsi? | URL live + alur utama jalan |
+| **Bahasa** | Bahasa Indonesia & konteks pembeli? | Copy & UI sesuai |
+| **Truth-Lock** | Ada klaim/hasil yang tak benar? | Tidak ada klaim palsu |
+| **MoR** | Pembayaran tercatat & disclosure ada? | brand_ledger + footer/checkout |
+| **Proof** | Bukti dikirim ke pembeli? | Artefak §3 terkirim |
+| **Onboard** | (langganan) handoff dilakukan? | B3-02 selesai |
+
+> Order yang gagal gate → **kembali ke F3/F4** (revisi), bukan ditutup. Truth-Lock di atas kecepatan.
 
 ---
 
-## 6. Definition of Done (mesin delivery)
+## 5. Peran mesin (Pack A teknis + Pack B agentic-team)
 
-- [x] Pipeline F0–F7 terdokumentasi & terikat ke skill nyata (Truth-Lock).
-- [x] Gate kualitas (DoO/Truth-Lock/HITL/Compliance) didefinisikan.
-- [x] Format proof-of-outcome baku.
-- [ ] Template DoO per-SKU diisi lengkap untuk 9 solusi (R2 — B5-05).
-- [ ] 2–3 proof/case study riil dirakit (R3 — B5-05).
+| Fase | Pack A (BAGAIMANA) | Pack B (SIAPA memutuskan) |
+|---|---|---|
+| F0 Intake | context-injection | orchestrator + cofounder |
+| F1 Scope | credit-aware (guard) | cpo / cto (scope & feasibility) |
+| F3 Assemble | orchestration-patterns, fullstack-cycle | squad-engineering / squad terkait |
+| F4 Deploy | cf-byok-deploy, zero-trust | cto |
+| F5 Proof | verify-rubric, hermes-memory | coo (QA) |
+| F6–F7 Retain | workflow-ops, memory-dreaming | squad-sales-cs / opsfinance |
+
+> Ingat D-1 Truth-Lock: ini **role-switching terstruktur dalam 1 sesi/agent**, bukan 16 proses paralel.
+
+---
+
+## 6. Instrumentasi & telemetry (untuk membuktikan & mengoptimasi)
+
+- **orders (D1):** status pesanan, SKU, amount, MoID (sudah ada di skema).
+- **Tambahan kanonik (roadmap R2):** `outcome_proof` (URL bukti), `tto_days` (waktu deliver),
+  `delivery_mode` (diy/dwy/dfy) untuk menghitung TTO & success-rate.
+- **KPI delivery:** TTO median, % order lulus DoO pada percobaan pertama, refund-rate,
+  retensi langganan (B3-01).
 
 > Lanjut: status kode saat ini + gap tertutup + roadmap eksekusi → **B5-05**.

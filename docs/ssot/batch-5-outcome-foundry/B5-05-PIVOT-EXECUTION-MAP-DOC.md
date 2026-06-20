@@ -1,83 +1,81 @@
 # B5-05 · PIVOT-EXECUTION-MAP-DOC — Status Kode, Gap Tertutup, Roadmap
 ## SparkMind · SSOT Batch 5 · Eksekusi pivot ke Outcome Foundry
 
-> v1.0 · 2026-06-20 · Fokus: **apa yang sudah live di kode**, gap apa yang sudah tertutup vs masih
-> terbuka, dan roadmap R2–R5. Mengikat B4-07 (execution log Sprint R1) ke depan.
->
-> **Sumber kanonik:** `docs/ssot/batch-5-outcome-foundry/B5-05-PIVOT-EXECUTION-MAP-DOC.md`
+> v1.0 · 2026-06-20 · Fokus: apa yang **sudah live di kode**, gap apa yang **sudah ditutup**
+> oleh pivot ini, dan roadmap R1–R5 selanjutnya. Truth-Lock: status diverifikasi dari kode nyata.
 
 ---
 
-## 1. Status kode (LIVE & build hijau)
+## 1. Status kode SAAT INI (terverifikasi — build hijau)
 
-Verifikasi B4-07 + commit `7950fe5`. Yang sudah berjalan di production code:
+> Diverifikasi: `npm run build` → `dist/_worker.js` (74 modules, ~147 kB) ✓.
 
-| Kapabilitas | Route / file | Status |
+| Area | Status | Bukti (file/route) |
 |---|---|---|
-| Landing outcome (bahasa awam) | `/` → `OutcomeHome` (`src/views/solutions.tsx`) | ✅ live |
-| Katalog solusi (9 SKU, 4 tier) | `/solutions` → `SolutionsCatalog` | ✅ live |
-| Detail solusi (masalah→outcome→plan→mesin) | `/solutions/:slug` → `SolutionDetail` | ✅ live |
-| Jalur developer (skill mentah, proof) | `/developers`, `/foundry` | ✅ live |
-| Backlink lama dijaga | `/catalog` → 302 `/developers` | ✅ live |
-| Checkout SKU solusi via MoR | `/checkout/:slug` (CHECKOUT_PRODUCTS) | ✅ live |
-| Pembayaran QRIS/VA | Duitku + webhook (`src/lib/duitku.ts`, `gateway.ts`) | ✅ live (PRODUCTION) |
-| Buyer dashboard | `/orders`, `/api/order/:moid` | ✅ live |
-| Lead capture DFY/partner | `/api/intake` → tabel `leads` | ✅ live |
-| SEO bahasa outcome | `renderer.tsx` (meta/OG/JSON-LD), `sitemap.xml` | ✅ live |
-| Data katalog | `src/data/solutions.ts` (9 SKU + pricing ladder) | ✅ live |
+| Data layer outcome | ✅ LIVE | `src/data/solutions.ts` — 9 SKU, 4 tier, plan DIY/DWY/DFY |
+| Views outcome | ✅ LIVE | `src/views/solutions.tsx` — `OutcomeHome`, `SolutionsCatalog`, `SolutionDetail` |
+| Landing publik = outcome | ✅ LIVE | route `/` → `OutcomeHome` |
+| Katalog solusi | ✅ LIVE | route `/solutions`, `/solutions/:slug` |
+| Jalur developer (proof) | ✅ LIVE | route `/developers` (katalog skill), `/foundry` |
+| Engine checkout MoR menerima SKU solusi | ✅ LIVE | `CHECKOUT_PRODUCTS = {...OFFER_AS_PRODUCT, ...SOLUTION_AS_PRODUCT}` |
+| SEO/OG outcome-language | ✅ LIVE | `src/renderer.tsx` (meta description/OG/Twitter) |
+| Redirect kompatibilitas | ✅ LIVE | `/catalog` → `/developers` |
+| Pembayaran MoR (Duitku) | ✅ LIVE (Batch 1) | `/api/checkout`, `/webhook/duitku`, brand_ledger |
 
-> **Zero perubahan merusak:** stack, MoR, Duitku, skema D1 (`0001`/`0002`) tidak berubah.
-
----
-
-## 2. Gap yang DITUTUP oleh Batch 5 (dokumentasi)
-
-| Gap sebelum B5 | Ditutup oleh |
-|---|---|
-| Riset OaaS tanpa angka (B4-06 sengaja kosong) | **B5-01** — angka nyata bersumber (Fin $0.99, Zendesk $1.50, Gartner 30%, dst.) |
-| Tidak ada definisi sistem "Outcome Foundry" | **B5-02** — 3-lapis, 7 prinsip, taksonomi, DoO |
-| Model uang OaaS belum terperinci | **B5-03** — hibrida, value-metric, unit-economics, gating |
-| Mesin delivery + proof belum terdokumentasi | **B5-04** — pipeline F0–F7, SLA/TTO, proof-of-outcome |
-| Sintesis lintas batch + supersede belum ada | **B5-06** |
+> **Kesimpulan:** pivot **kode** (Batch 4 R1) sudah dieksekusi & build hijau. Yang kurang
+> sebelumnya: **commit + push + doc kanonik** → ditutup oleh Batch 5 ini.
 
 ---
 
-## 3. Gap yang MASIH terbuka (butuh kode/konten) → roadmap
+## 2. Gap yang DITUTUP oleh Batch 5
 
-| Gap | Sprint | Aksi |
+| # | Gap (sebelum) | Penutup (Batch 5) |
 |---|---|---|
-| Otomasi langganan (renewal MRR) | **R2** | Tabel `subscriptions` + reminder + status di buyer dashboard |
-| DoO per-SKU diisi lengkap (9 solusi) | **R2** | Tambah field DoO terstruktur ke `solutions.ts` + tampil di `SolutionDetail` |
-| Proof/case study riil (2–3) | **R3** | Halaman `/proof` atau bagian di `/solutions`; rakit dari delivery nyata |
-| Perkaya `/partner` (reseller/white-label/MoR-aaS) | **R3** | Konten + intake partner + komisi |
-| Canon Course materi penuh + SEO lokal per vertikal | **R4** | Landing course lengkap; halaman SEO per kota/vertikal |
-| Pilot outcome-based pricing (1 vertikal terukur) | **R5** | Setelah lulus 5 gerbang B5-03 §5 (measurement+proof+kontrak) |
+| G-OAAS-1 | Pivot diputuskan (B4) tapi **belum tervalidasi pasar** | B5-01 riset OaaS/RaaS/SaS 2025–2026 + angka |
+| G-OAAS-2 | "Outcome Foundry" masih slogan, **belum sistem kanonik** | B5-02 definisi sistem 3-lapis + 7 prinsip + DoO |
+| G-OAAS-3 | Model uang outcome **belum dirumuskan** (risiko pure-outcome) | B5-03 model hibrida + value-metric + unit-economics |
+| G-OAAS-4 | **Cara deliver & proof** outcome belum kanonik | B5-04 pipeline F0–F7 + SLA + proof-of-outcome |
+| G-OAAS-5 | Kode pivot **belum commit/push & belum terdokumentasi** | B5-05 (ini) + commit & push GitHub |
+| G-OAAS-6 | SSOT 06/07/08 masih framing niche | Ditandai supersede → diarahkan ke B4/B5 (B5-06) |
 
 ---
 
-## 4. Definition of Done — PIVOT (level sistem)
+## 3. Roadmap eksekusi R1–R5 (credit-aware, ter-gate HITL)
 
-- [x] Permukaan produk = outcome (landing, katalog, detail) — Sprint R1.
-- [x] Jalur developer terpisah & utuh (proof/funnel).
-- [x] Engine MoR melayani SKU solusi tanpa regresi.
-- [x] **Doc kanonik sistem OaaS lengkap (B5-00..06).**
-- [x] Index + README menunjuk Batch 5.
-- [ ] Renewal langganan otomatis (R2).
-- [ ] ≥2 proof/case study riil (R3).
-- [ ] Pilot outcome-based (R5, ber-gating).
+| Sprint | Tujuan | Output | Status |
+|---|---|---|---|
+| **R1** | Pivot kode: solutions + routes + landing | `/solutions`, `/developers`, OutcomeHome | ✅ DONE (live) |
+| **R2** | Proof & telemetry | kolom `outcome_proof`/`tto_days`/`delivery_mode`, halaman case-study | ⬜ Next |
+| **R3** | Konversi mainstream | intake form per-vertikal, kalkulator harga, objection FAQ | ⬜ |
+| **R4** | Retensi & expand | dashboard langganan (Care Plan/AI Staff), reminder, upsell high-ticket | ⬜ |
+| **R5** | Hybrid metered/outcome-bonus | metering AI Staff + kontrak outcome (hanya bila measurement matang) | ⬜ (gated) |
 
-> **Status pivot:** **SELESAI di level sistem & dokumentasi**; sisa = pendalaman fitur (R2–R5).
+> Setiap sprint = 1 micro-sprint (B2-04), credit-aware, dengan gate HITL untuk payment/legal/harga.
 
 ---
 
-## 5. Risiko eksekusi & mitigasi
+## 4. Definition of Done — Pivot Outcome Foundry (Batch 5)
+
+- [x] Riset OaaS/RaaS/SaS kanonik (B5-01) dengan sumber & angka.
+- [x] Konsep sistem "Outcome Foundry" kanonik (B5-02): 3 lapis, 7 prinsip, DoO.
+- [x] Model bisnis OaaS hibrida (B5-03): pricing, value-metric, unit-economics, guarantee.
+- [x] Delivery engine + proof-of-outcome (B5-04): pipeline, SLA, gate kualitas.
+- [x] Eksekusi map + gap closure (B5-05, ini).
+- [x] Sintesis lintas batch (B5-06).
+- [x] Kode pivot live & build hijau (terverifikasi).
+- [ ] SSOT index + README diperbarui menunjuk Batch 5.
+- [ ] Commit + push ke `Sovereign-Agent-Foundry` (origin main).
+
+---
+
+## 5. Risiko & mitigasi (ringkas)
 
 | Risiko | Mitigasi |
 |---|---|
-| Over-promise outcome | DoO + Truth-Lock + garansi (B5-03 §6) |
-| Beban delivery 1-operator | Agent squad + cap slot DFY/bulan |
-| Delivery tak konsisten | verify-rubric gate + DoO (B5-04 §3) |
+| Over-promise outcome (atribusi) | Hibrida deterministik + DoO + guarantee terbatas (B5-03 §5) |
+| Sales cycle high-ticket panjang | Tangga DIY→Setup→DFY (entry cepat) |
+| Pembeli mainstream bingung jargon | Lapis 1 murni manfaat; jargon hanya di `/developers` |
+| Delivery tak konsisten | verify-rubric gate + DoO (B5-04 §4) |
 | Klaim palsu | Truth-Lock di setiap gate |
-| Pemain global masuk ID | Perdalam moat lokal (MoR + bahasa + proof + IDR) |
 
-> Lanjut: sintesis menyeluruh lintas batch + apa yang masih open → **B5-06**.
+> Lanjut: sintesis menyeluruh + apa yang masih open → **B5-06**.

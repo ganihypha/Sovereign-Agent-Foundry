@@ -1,78 +1,91 @@
 # B5-06 · GAP-CLOSURE-AND-SYNTHESIS-DOC — Sintesis Lintas Batch
 ## SparkMind · SSOT Batch 5 · Satu sistem: Outcome Foundry (OaaS)
 
-> v1.0 · 2026-06-20 · Fokus: menyatukan Batch 1–5 menjadi **satu narasi kanonik**, memetakan
-> dokumen mana yang **men-supersede** mana, dan menutup pertanyaan "apa yang masih kurang".
->
-> **Sumber kanonik:** `docs/ssot/batch-5-outcome-foundry/B5-06-GAP-CLOSURE-AND-SYNTHESIS-DOC.md`
+> v1.0 · 2026-06-20 · Fokus: menyatukan Batch 1–5 menjadi **satu narasi kanonik tunggal**,
+> menandai dokumen yang di-supersede, dan mendaftar gap yang masih terbuka (jujur, Truth-Lock).
 
 ---
 
-## 1. Sintesis: perjalanan satu sistem
+## 1. Satu kalimat yang menyatukan semuanya
 
-```
-Batch 1 (00–13)      Fondasi: PRD, desain, arsitektur, monetisasi, strategi (framing AWAL).
-Batch 2 (operasional) Cara menjalankan harian (runbook, API, prompt per-role, sprint).
-Batch 3 (skala)       Cara tumbuh & bertahan (metrik AaaS, onboarding klien, insiden).
-Batch 4 (reposition)  KEPUTUSAN pivot: skill mart → Outcome Foundry; eksekusi Sprint R1 (kode live).
-Batch 5 (outcome)     PENUNTASAN: riset ber-angka + sistem + model + delivery + eksekusi + sintesis.
-```
-
-Benang merah: **dari "jual bahan" → "jual hasil"**, dengan mesin (36 skill) & rel pembayaran
-(MoR/Duitku) yang tidak berubah — hanya **kemasan, pasar, bahasa, harga** yang naik kelas.
+> **SparkMind adalah Outcome Foundry untuk UMKM/SMB Indonesia: pabrik yang mengubah masalah
+> bisnis menjadi hasil yang sudah jalan (OaaS), dirakit dari 36 sovereign skill di atas
+> infrastruktur edge Cloudflare, dijual sebagai paket hibrida (Setup + langganan + jasa),
+> dibayar lewat QRIS/VA via Merchant-of-Record yang patuh.**
 
 ---
 
-## 2. Peta supersede (mana yang kini berlaku)
+## 2. Bagaimana tiap batch saling mengunci
 
-| Dokumen | Status framing | Catatan |
-|---|---|---|
-| **B5-00..06** | ✅ **KANONIK & TERBARU** | Framing & model bisnis saat ini = Outcome Foundry / OaaS |
-| B4-01..05 | ✅ Berlaku (cetak biru reposition) | Diserap & dituntaskan oleh B5 |
-| B4-06/B4-07 | ✅ Berlaku (tesis ringan + execution log R1) | Diperdalam oleh B5-01 (angka) & B5-04/05 |
-| 06/07/08 (Strategic) | ⚠️ **Framing pasar di-supersede** | Substansi strategi tetap; framing "skill mart" → baca via lensa Outcome Foundry |
-| 01–05, 09–13 | ✅ Berlaku | Fondasi/PRD/arsitektur/GTM/roadmap tetap relevan |
-| Batch 2 & 3 | ✅ Berlaku | Operasional & skala tidak berubah |
-
-> **Aturan baca SSOT:** jika ada konflik framing pasar, **Batch 5 menang**. Untuk teknis/
-> operasional, dokumen spesifik (arsitektur, runbook) tetap otoritatif.
-
----
-
-## 3. Checklist gap-closure (mandat owner Batch 5)
-
-| Mandat | Status |
+| Batch | Kontribusi ke sistem Outcome Foundry |
 |---|---|
-| Deep dive + deep research OaaS/RaaS/SaS | ✅ B5-01 (bersumber, ber-angka) |
-| Full pivot ke Outcome Foundry (bukan sekadar marketplace) | ✅ kode live (B5-05 §1) + sistem (B5-02) |
-| Upgrade & enhance semua doc canonic/SSOT | ✅ B5 ditulis + index/README diperbarui |
-| Sintesis semua doc canonic ke sistem Outcome Foundry | ✅ dok ini (B5-06) |
-| Cari & isi gap/miss | ✅ ditutup (B5-05 §2); sisa = roadmap R2–R5 (B5-05 §3) |
-| Push ke GitHub | ✅ commit & push `Sovereign-Agent-Foundry` |
+| **Batch 1 (00–13)** | Produk live + arsitektur edge + monetisasi v1 + 4-Layer Hybrid Lock. **→ jadi REL & MESIN.** |
+| **Batch 2 (B2)** | Runbook 1-sesi/1-agent, API spec, prompt per-role, sprint. **→ jadi DELIVERY DISCIPLINE.** |
+| **Batch 3 (B3)** | Metrik AaaS, onboarding klien, runbook insiden. **→ jadi SKALA & RETENSI.** |
+| **Batch 4 (B4)** | Keputusan reposition skill→outcome, target-market, productized offers, GTM. **→ jadi ARAH.** |
+| **Batch 5 (B5)** | Validasi OaaS + konsep sistem + model uang + delivery + eksekusi. **→ TUNTASKAN PIVOT.** |
+
+```
+ARAH (B4) → divalidasi RISET (B5-01) → jadi SISTEM (B5-02)
+   → dimonetisasi MODEL (B5-03) → di-DELIVER (B5-04) → di-EKSEKUSI (B5-05)
+   di atas MESIN+REL (B1) dengan DISIPLIN (B2) & SKALA (B3).
+```
 
 ---
 
-## 4. Gap yang sengaja DIBIARKAN terbuka (jujur)
+## 3. Peta supersede (apa yang framing-nya diganti)
 
-Bukan kelalaian — ini butuh **kenyataan operasional** dulu (Truth-Lock):
+| Dokumen | Status | Arahan |
+|---|---|---|
+| 06-STRATEGIC-DOC | **Superseded (framing pasar)** | Pakai B4-01..B4-02 + B5-01..B5-02. Tetap berguna sbg konteks. |
+| 07-STRATEGIC-WINNING-DOC | **Superseded (framing)** | Moat & cara menang → B5-01 §5 + B5-02 §2 (3-lapis = moat). |
+| 08-STRATEGIC-DOMINATION-DOC | **Superseded (framing)** | Dominasi kategori → B5-02 (category: Outcome Foundry ID). |
+| 05-MONETIZATION-DOC | **Enriched** | Multi-SKU & OaaS hibrida → B5-03 (kanonik harga & unit-economics). |
+| 09-GTM-DOC | **Enriched** | Channel mainstream → B4-04 + proof-of-outcome (B5-04 §3). |
+| 01-PRD / 02-DESIGN / 03-ARCHITECT | **Tetap** | Mesin & arsitektur; delivery pipeline diperjelas di B5-04. |
+| B3-01 METRIK-AAAS | **Extended** | Tambah TTO, success-rate DoO, refund-rate (B5-04 §6, B5-03 §4). |
 
-1. **Proof/case study riil** — baru ada setelah delivery nyata (R3). Tidak boleh dipalsukan.
-2. **Outcome-based pricing** — hanya pilot setelah 5 gerbang B5-03 §5. Tidak boleh terburu.
-3. **Otomasi renewal langganan** — butuh kode tabel `subscriptions` (R2).
-
-> Membiarkan ini terbuka **secara eksplisit** lebih jujur daripada mengklaim selesai.
+> "Superseded" = **framing pasar**-nya digantikan, isi teknis/historisnya tetap dapat dirujuk.
 
 ---
 
-## 5. Satu kalimat kanonik (pegangan akhir)
+## 4. Sintesis penawaran (satu tabel rujukan cepat)
 
-> **SparkMind adalah Outcome Foundry: kami mengubah masalah UMKM/SMB Indonesia menjadi hasil
-> bisnis yang sudah jalan & terbukti — dirakit dari 36 sovereign skill, dijual sebagai
-> Outcome-as-a-Service dengan model hibrida (Setup + langganan + jasa), dibayar lokal lewat
-> QRIS/VA secara patuh (MoR), dan setiap janji ter-Truth-Lock.**
+| Outcome (Lapis pasar) | Tier | Entry harga | Langganan | Mesin (skill) | Brand |
+|---|---|---|---|---|---|
+| Kasir + Booking Jasa Lokal | vertical | Setup 1,5jt / DIY 490rb | Care Plan 199rb | fullstack-cycle | BarberKas |
+| Toko Online + CS Otomatis | vertical | Setup 1,5jt | AI Staff CS 490rb | squad-sales-cs | SparkMind |
+| Mesin Konten & Promo | vertical | DIY 490rb | AI Staff Mktg 490rb | gtm-engineering | PaceLokal |
+| Sistem Event/Tiket/RSVP | vertical | Setup 1,5jt | Care Plan 199rb | claw-actuation | MomentKas |
+| Donasi & Keanggotaan | vertical | Setup 1,5jt | Care Plan 199rb | zero-trust | Nurani.OS |
+| Otomasi Admin & Dokumen | vertical | — | AI Staff Admin 490rb | squad-opsfinance | KuratorKas |
+| Aplikasi Custom (DFY) | high-ticket | mulai 5jt | Care Plan | fullstack+C-Suite | SparkMind Core |
+| AI Company in a Box | high-ticket | mulai 12jt | langganan | team-boot+orchestrator | SparkMind Core |
+| Canon Course | education | 349rb | — | master-boot | SparkMind |
+| (Developer) All-Access Bundle | developer | 990rb | Founder Pass 149rb | 36 skill | SparkMind |
 
-Kita menang bukan karena model AI terbaik, tapi karena bisa **men-deliver outcome secara patuh,
-berulang, lokal, dan terbukti** — di pasar (Indonesia OaaS) yang belum ada penantang berskala.
+---
+
+## 5. Gap yang MASIH terbuka (jujur — backlog R2–R5)
+
+| Gap | Dampak | Rencana |
+|---|---|---|
+| Telemetry proof (TTO, success-rate, proof URL) belum di DB | Sulit ukur & buktikan delivery | R2 (kolom + dashboard) |
+| Case-study / galeri hasil publik belum ada | Trust mainstream kurang maksimal | R2–R3 |
+| Intake per-vertikal + kalkulator harga belum ada | Friksi konversi high-ticket | R3 |
+| Dashboard langganan (Care Plan/AI Staff) belum ada | Retensi belum terinstrumentasi | R4 |
+| Hybrid metered/outcome-bonus belum dibangun | Belum capture value tahap lanjut | R5 (gated, butuh measurement matang) |
+| README & 00-INDEX belum menunjuk Batch 5 | Navigasi SSOT | ditutup di commit ini |
+
+---
+
+## 6. Penutup kanonik
+
+Batch 5 **menuntaskan** transformasi SparkMind: bukan lagi "semacam marketplace" yang menjual
+*bahan* (skill, mudah ditiru), melainkan **Outcome Foundry** yang menjual *hasil* (OaaS,
+sulit ditiru karena butuh **infra edge + MoR lokal + pipeline agentik + delivery cepat**).
+Model uangnya **hibrida** (sesuai pembelajaran pasar global agar tidak terjebak batas
+struktural pure-outcome), bahasanya **Indonesia-first**, dan setiap janji **ter-Truth-Lock**.
 
 > **Aksi terakhir Batch 5:** perbarui `00-SSOT-CANONICAL-INDEX.md` + `README.md` untuk menunjuk
 > Batch 5, lalu **commit & push** ke `https://github.com/ganihypha/Sovereign-Agent-Foundry`.

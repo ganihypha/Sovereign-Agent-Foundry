@@ -2,108 +2,108 @@
 ## SparkMind · SSOT Batch 5 · Pricing hibrida, value-metric, unit-economics
 
 > v1.0 · 2026-06-20 · Fokus: bagaimana Outcome Foundry **menghasilkan uang** secara
-> berkelanjutan — mengikat riset (B5-01) ke harga live (`solutions.ts`).
->
-> **Sumber kanonik:** `docs/ssot/batch-5-outcome-foundry/B5-03-OUTCOME-BUSINESS-MODEL-DOC.md`
+> struktural-benar (hibrida), dengan value-metric jujur & unit-economics yang sehat.
+> Diturunkan dari riset B5-01 (pure-outcome punya batas → hibrida menang).
 
 ---
 
-## 1. Prinsip model: HIBRIDA (terbukti menang)
+## 1. Prinsip monetisasi kanonik
 
-Riset B5-01 §4 menyimpulkan: pemenang OaaS pakai **hibrida** (base + langganan + outcome/usage),
-bukan pure-outcome. SparkMind mengadopsi persis pola itu:
-
-```
-PENDAPATAN = Setup (sekali bayar)  +  Langganan (MRR)  +  Jasa (proyek)  [+ Outcome pilot]
-             ───────────────────     ─────────────────    ──────────────   ───────────────
-             cashflow cepat           pendapatan stabil    margin tinggi    masa depan terukur
-```
-
----
-
-## 2. Tiga aliran pendapatan (live di kode)
-
-| Aliran | SKU live | Harga (IDR) | Peran ekonomi |
-|---|---|---|---|
-| **Setup / one-time** | Setup Vertical · Template DIY · Canon Course | Rp1.5jt · Rp490k · Rp349k | Akuisisi + cashflow cepat |
-| **Langganan (MRR)** | Care Plan · AI Staff (CS/Marketing/Admin) | Rp199k/bln · Rp490k/bln | **Mesin nilai jangka panjang (LTV)** |
-| **Jasa (high-ticket)** | App Custom · AI Company in a Box | mulai Rp5jt · mulai Rp12jt | Margin tinggi, sedikit slot |
-
-> **Tangga harga (price ladder):** Rp349k (tripwire) → Rp490k (DIY/AI Staff) → Rp1.5jt (Setup)
-> → Rp5jt (App) → Rp12jt (AI Company). Tripwire menarik, langganan menahan, high-ticket
-> mengangkat ARPU.
+1. **Hibrida wajib:** setiap outcome = **base (sekali bayar) + langganan + jasa** — bukan
+   pure-outcome. Base = lantai pendapatan (atasi kekhawatiran prediktabilitas CFO).
+2. **Value-metric deterministik:** harga ditambatkan ke hasil yang **jelas & terukur**
+   (app live, jam admin dihemat, jumlah tiket dibalas) — bukan metrik probabilistik
+   ("revenue naik") yang sulit diatribusi.
+3. **Tangga harga (good-better-best + land-expand):** DIY (murah, self-serve) → Setup (kami
+   pasang) → DFY (jasa penuh) → langganan (retensi) → high-ticket (expand).
+4. **IDR & QRIS-first:** semua harga rupiah, semua pembayaran lokal (QRIS/VA/e-wallet via Duitku).
+5. **Multi-SKU per aset:** satu mesin skill menghasilkan banyak SKU (maksimalkan LTV).
 
 ---
 
-## 3. Value-metric (apa yang "dihitung")
+## 2. Katalog harga kanonik (selaras kode `src/data/solutions.ts`)
 
-Value-metric = unit yang membuat harga terasa adil bagi pelanggan & skalabel bagi kita.
+> Sumber kebenaran harga = kode. Tabel ini cerminan kanoniknya (IDR).
 
-| SKU | Value-metric | Catatan |
+| SKU / Plan | Model | Harga (IDR) | Tier | Checkout slug |
+|---|---|---|---|---|
+| Template app vertikal (DIY) | diy | 490.000 | vertical | `template-konten` (contoh) |
+| Setup app vertikal (kami pasang) | dwy | 1.500.000 | vertical | (intake/DFY) |
+| Care Plan (langganan/bln) | dfy | 199.000 | subscription | `care-plan` |
+| AI Staff — CS (langganan/bln) | dfy | 490.000 | subscription | `ai-staff-cs` |
+| AI Staff — Marketing (langganan/bln) | dfy | 490.000 | subscription | `ai-staff-marketing` |
+| AI Staff — Admin (langganan/bln) | dfy | 490.000 | subscription | `ai-staff-admin` |
+| App Custom (Done-for-You) | dfy | mulai 5.000.000 | high-ticket | (intake) |
+| AI Company in a Box | dfy | mulai 12.000.000 | high-ticket | (intake) |
+| Canon Course (edukasi) | diy | 349.000 | education | `canon-course` |
+| All-Access Bundle (36 skill) | one-time | 990.000 | developer | `all-access-bundle` |
+| Founder Pass (langganan bln-1) | subscription | 149.000 | developer | `founder-pass` |
+
+> One-time SKU (care-plan/ai-staff/template/course/bundle/founder-pass) → checkout langsung
+> via engine MoR. High-ticket & Setup → **intake** lalu invoice (HITL gate owner).
+
+---
+
+## 3. Value-metric per outcome (apa yang dibayar pelanggan)
+
+| Outcome | Value-metric (deterministik) | Bukti (proof) |
 |---|---|---|
-| Setup Vertical | **per sistem terpasang** | satu app live = satu nilai jelas |
-| Care Plan | **per bulan terlayani** | retensi = kesehatan bisnis |
-| AI Staff | **per fungsi per bulan** (CS/marketing/admin) | tiap "staff" = 1 unit langganan |
-| App Custom / AI Company | **per proyek** | scope di-DoO-kan dulu |
-| Canon Course | **per akses** | tripwire edukasi |
+| Kasir + Booking | App kas+booking **live & dipakai** | URL app + transaksi pertama |
+| Toko Online + CS | Toko **online & CS auto-balas** | URL toko + log balasan CS |
+| Mesin Konten | **N konten/promo** terjadwal per minggu | Kalender konten + post terbit |
+| Event/Tiket | Halaman event **terbit & RSVP masuk** | URL event + daftar RSVP |
+| Donasi/Keanggotaan | Halaman donasi **live & menerima** | URL + rekap donasi |
+| Otomasi Admin | **Jam admin dihemat** / laporan otomatis | Sebelum/sesudah + laporan |
+| App Custom | App **sesuai spec & ter-deploy** | URL + acceptance checklist |
+| AI Company | C-Suite+squad **aktif** menjalankan fungsi | Dashboard peran + output |
 
-> **Calon value-metric outcome-based (pilot, B5-01 §3):** per-resolusi CS, per-lead, per-event
-> terjual. Hanya diaktifkan setelah measurement + proof + kontrak matang (§5).
-
----
-
-## 4. Unit-economics (model, bukan klaim)
-
-Karena edge-native (Cloudflare, tanpa VPS idle), **biaya marjinal per pelanggan rendah**.
-Kerangka (angka harga = live; biaya = asumsi internal, bukan klaim publik):
-
-```
-Contoh kohort UMKM (ilustratif):
-  Setup Vertical (Rp1.5jt sekali)  +  Care Plan (Rp199k × 12)  =  Rp3.888.000 / tahun / klien
-  AI Staff CS (Rp490k × 12)                                     =  Rp5.880.000 / tahun / klien
-Biaya marjinal (infra CF + delivery agentik) ditekan rendah → margin kontribusi sehat.
-```
-
-**Pendorong LTV:** langganan (Care Plan + AI Staff) = MRR yang menumpuk. **Pendorong CAC rendah:**
-funnel developer (proof) + SEO lokal per vertikal (B4-04). **Aturan:** jaga refund-rate rendah
-lewat DoO + proof (B5-04).
+> **Truth-Lock:** value-metric = hasil yang **bisa dibuktikan**, bukan janji bisnis pihak ketiga.
 
 ---
 
-## 5. Kapan boleh pindah ke outcome-based pricing (gating)
+## 4. Unit-economics (model, *est.* — wajib divalidasi data nyata)
 
-Pure/per-outcome menggoda tapi berisiko (B5-01 §4). Gerbang wajib **semua** terpenuhi:
+> Karena 100% edge-native (ZERO VPS), **COGS infra mendekati nol** → margin tinggi.
 
-1. **Measurement nyata** — outcome bisa diukur otomatis (mis. resolusi CS tercatat di sistem).
-2. **Proof ≥ 2–3 case study** — track record di vertikal target.
-3. **Kontrak & SLA jelas** — definisi outcome + batas tanggung jawab + cap biaya.
-4. **Atribusi disepakati** — pelanggan setuju cara menghitung "hasil karena kami".
-5. **Cashflow aman** — tetap ada base fee/langganan sebagai bantalan (hibrida).
+| Komponen | Asumsi *est.* | Catatan |
+|---|---|---|
+| COGS infra / order | ~Rp 0–ribuan | Cloudflare Pages/D1 free-tier → edge murah |
+| Biaya delivery (kredit AI + waktu) | variabel | credit-aware: pipeline hemat token |
+| Fee MoR/PG (Duitku) | ~% per transaksi | sesuai tarif Duitku (QRIS/VA) |
+| **Gross margin produk digital (DIY/course/bundle)** | **tinggi (70–90% est.)** | tanpa jasa manusia |
+| **Gross margin DFY/high-ticket** | sedang | ada komponen jasa/waktu |
+| **MRR driver** | Care Plan + AI Staff | retensi = mesin pertumbuhan |
 
-> **Aturan emas:** jangan pindah ke metered/outcome-bonus sebelum measurement + proof + kontrak
-> matang. Hingga itu: **hibrida deterministik** (Setup + langganan + jasa).
-
----
-
-## 6. Garansi & risiko (membangun trust = jual outcome)
-
-| Mekanisme | Isi |
-|---|---|
-| **Garansi DoO** | Jika kriteria DoO tidak tercapai pada delivery → revisi/refund sesuai kebijakan `/legal`. |
-| **Refund terbatas** | Mengikuti dokumen Refund di Legal Hub (UU PDP & MoR). |
-| **Cap delivery** | Batasi slot DFY/bulan agar kualitas terjaga (1-operator + agent squad). |
-| **Truth-Lock harga** | Tidak ada harga "hasil" tanpa mesin & DoO nyata. |
+**KPI kanonik (lihat juga B3-01 METRIK-AAAS):**
+- **AOV** naik (paket > file satuan).
+- **MRR** dari langganan (Care Plan/AI Staff) = prioritas retensi.
+- **LTV/CAC** sehat karena CAC rendah (channel organik + proof) & LTV tinggi (langganan).
+- **Time-to-Outcome** (TTO): hari, bukan bulan — diferensiator vs freelancer/agency.
 
 ---
 
-## 7. Ringkasan model (satu tabel)
+## 5. Garansi & kebijakan (outcome guarantee yang aman)
 
-| Pertanyaan | Jawaban kanonik |
-|---|---|
-| Apa yang dijual? | **Outcome** (hasil bisnis jalan), bukan skill mentah. |
-| Bagaimana dihargai? | **Hibrida:** Setup + langganan + jasa (outcome-based = pilot). |
-| Dari mana MRR? | **Care Plan + AI Staff** (langganan). |
-| Apa moat-nya? | Delivery engine nyata + MoR lokal + proof berbahasa ID. |
-| Kapan pure-outcome? | Hanya setelah lulus 5 gerbang §5 (Truth-Lock). |
+> Pure-outcome guarantee berisiko (atribusi). Maka garansi kami **deterministik & terbatas**:
+
+| Jenis | Janji | Batas (Truth-Lock) |
+|---|---|---|
+| **Deliver guarantee** | App/sistem **jadi & jalan** sesuai DoO atau revisi/refund. | Sebatas scope yang disepakati di intake. |
+| **Care Plan** | Update & support selama langganan aktif. | Bukan jaminan hasil bisnis pelanggan. |
+| **AI Staff** | Fungsi (CS/marketing/admin) **berjalan** tiap bulan. | Output ≠ jaminan revenue/konversi. |
+
+Kebijakan: refund/privacy mengacu **UU PDP** & dokumen legal (`/legal`). Semua via **MoR OBP**.
+
+---
+
+## 6. Strategi harga lanjutan (opsional, roadmap)
+
+- **Hybrid metered (R3+):** base + add-on usage (mis. AI Staff per N percakapan) bila data matang.
+- **Outcome-bonus (R4+):** bonus/komisi hanya untuk outcome yang **terukur jelas & disepakati**
+  (mis. per event terjual) — hanya setelah measurement & kontrak siap (hindari batas struktural).
+- **Tiering paket:** Starter / Growth / Pro per vertikal (good-better-best).
+
+> **Aturan emas:** jangan pindah ke metered/outcome-bonus sebelum **measurement + proof + kontrak**
+> matang (riset B5-01: 78% pemenang outcome punya produk 5+ thn). Hingga itu: **hibrida deterministik**.
 
 > Lanjut: bagaimana outcome benar-benar dikirim & dibuktikan → **B5-04**.
