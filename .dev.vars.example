@@ -5,3 +5,9 @@ DUITKU_API_KEY="your-duitku-merchant-key"
 DUITKU_ENV="production"
 DUITKU_CALLBACK_URL="https://your-domain.pages.dev/webhook/duitku"
 DUITKU_RETURN_URL="https://your-domain.pages.dev/thank-you"
+
+# Fitur lanjutan (opsional)
+PAYMENT_PROVIDER="duitku"          # abstraksi gateway (T14)
+ADMIN_TOKEN="ganti-dengan-rahasia" # proteksi /admin (T10)
+RESEND_API_KEY=""                  # email lisensi otomatis (T3); kosong = nonaktif
+RESEND_FROM="SparkMind <noreply@sparkmind-obp.pages.dev>"

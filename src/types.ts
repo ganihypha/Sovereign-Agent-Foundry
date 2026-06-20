@@ -7,6 +7,12 @@ export type Bindings = {
   DUITKU_ENV: string // "sandbox" | "production"
   DUITKU_CALLBACK_URL: string
   DUITKU_RETURN_URL: string
+  // Opsional — fitur lanjutan (env-gated, aman bila kosong)
+  PAYMENT_PROVIDER?: string // "duitku" (default). Abstraksi multi-gateway (T14).
+  RESEND_API_KEY?: string   // email lisensi otomatis (T3) — secret
+  RESEND_FROM?: string      // alamat pengirim email lisensi
+  ADMIN_TOKEN?: string      // proteksi dashboard admin (T10) — secret
+  R2?: R2Bucket             // penyimpanan file skill (T2) — opsional
 }
 
 export interface Product {

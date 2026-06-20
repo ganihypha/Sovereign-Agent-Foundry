@@ -1,5 +1,6 @@
 import { PRODUCTS, formatIDR } from '../data/products'
 import { BRANDS, MOTHER_BRAND, MOR } from '../data/brands'
+import { OffersSection } from './extra'
 import type { Product } from '../types'
 
 const brandPill = (b: Product['brand']) => (
@@ -69,6 +70,22 @@ export const Home = () => (
       </div>
     </section>
 
+    <section class="max-w-6xl mx-auto px-5 pb-12">
+      <a href="/checkout/all-access-bundle" class="block rounded-2xl border border-indigo-500 bg-gradient-to-r from-indigo-600/20 to-slate-900 p-6 sm:p-8 hover:border-indigo-400 transition">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wide bg-indigo-500 text-white px-2 py-1 rounded-full">Paling Hemat · ~68% OFF</span>
+            <h2 class="text-2xl font-bold mt-3">All-Access Bundle — semua {PRODUCTS.length} skill</h2>
+            <p class="text-slate-400 text-sm mt-1">Sekali bayar, akses selamanya. Nilai katalog Rp 3.124.000.</p>
+          </div>
+          <div class="text-right">
+            <p class="text-3xl font-extrabold text-indigo-300">Rp 990.000</p>
+            <span class="inline-block mt-2 bg-indigo-600 hover:bg-indigo-500 px-5 py-2.5 rounded-lg font-semibold text-sm">Beli Sekarang →</span>
+          </div>
+        </div>
+      </a>
+    </section>
+
     <section class="max-w-6xl mx-auto px-5 pb-20">
       <h2 class="text-2xl font-bold mb-6">Skill Unggulan</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -125,6 +142,8 @@ export const Pricing = () => {
           </div>
         ))}
       </div>
+
+      <OffersSection />
     </div>
   )
 }

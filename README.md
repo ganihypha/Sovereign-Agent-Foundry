@@ -19,8 +19,17 @@ Hono + Cloudflare Pages + D1 (SQLite) + TypeScript + TailwindCSS (CDN). 100% Clo
 - ✅ Webhook `/webhook/duitku` — verifikasi signature POP (HMAC-SHA256 `merchantCode+amount+merchantOrderId` & fallback MD5), update order `paid`, mint license token, catat brand ledger.
 - ✅ **Verified live**: checkout production menghasilkan `paymentUrl` ke `https://app-prod.duitku.com/redirect_checkout`.
 - ✅ Download endpoint dengan validasi token & limit unduhan.
-- ✅ D1 schema lengkap (customers, orders, licenses, webhook_events, waitlist, brand_ledger).
+- ✅ D1 schema lengkap (customers, orders, licenses, webhook_events, waitlist, brand_ledger, **leads**).
 - ✅ Disclosure MoR di footer & checkout (kepatuhan).
+- ✅ **Legal Hub enterprise-grade** — Syarat & Ketentuan, Refund, Privasi (UU PDP No. 27/2022), Kepatuhan/MoR, + kontak support.
+- ✅ **Monetisasi penuh** — All-Access Bundle (Rp 990k, anchor), Founder Pass (Rp 149k/bln, MRR), Done-for-You (jasa), Reseller/White-Label & MoR-aaS (partner).
+- ✅ **Buyer dashboard** — `/orders` cek status + unduh ulang via Merchant Order ID.
+- ✅ **Lead capture** — intake Done-for-You & Partner (`POST /api/intake` → tabel `leads`).
+- ✅ **SEO/Discoverability** — OG/Twitter meta, JSON-LD (Organization), `robots.txt`, `sitemap.xml`, OG image.
+- ✅ **SSOT canonical docs** disimpan di `docs/ssot/`:
+  - **Batch 1 — Fondasi & Produk** (00–13): PRD, Design, Architect, Productionized, Monetization, Strategic, GTM, Runplaybook, Launch, Roadmap, Gap-Analysis.
+  - **Batch 2 — Operasional** (`batch-2-operasional/`, B2-00..B2-05): runbooks per-fase, API spec agen, template prompt per role, sprint per session, master architect prompt per session.
+  - **Batch 3 — Skala** (`batch-3-skala/`, B3-00..B3-03): metrik AaaS, playbook onboarding klien, runbook insiden.
 
 ## Functional Entry URIs
 | Method | Path | Keterangan |
@@ -31,12 +40,20 @@ Hono + Cloudflare Pages + D1 (SQLite) + TypeScript + TailwindCSS (CDN). 100% Clo
 | GET | `/product/:slug` | Detail + form checkout |
 | GET | `/about` `/docs` | Doctrine 4-layer |
 | GET | `/thank-you` | Halaman return |
+| GET | `/legal` | Legal Hub (index) |
+| GET | `/legal/:slug` | `terms` · `refund` · `privacy` · `compliance` |
+| GET | `/checkout/:slug` | `all-access-bundle` · `founder-pass` (offer checkout) |
+| GET | `/done-for-you` | Halaman jasa + intake |
+| GET | `/partner` | Reseller/White-label & MoR-aaS + intake |
+| GET | `/orders` | Buyer dashboard (cek pesanan + unduh ulang) |
+| GET | `/robots.txt` `/sitemap.xml` | SEO |
 | GET | `/api/products` | List 36 produk |
 | GET | `/api/product/:slug` | Detail produk |
 | GET | `/api/brands` | Metadata sub-brand |
-| POST | `/api/checkout` | `{slug,name,email}` → `{paymentUrl}` |
-| GET | `/api/order/:moid` | Status order |
+| POST | `/api/checkout` | `{slug,name,email}` → `{paymentUrl}` (produk & offer) |
+| GET | `/api/order/:moid` | Status order (+ `license_token`, `downloads_remaining`) |
 | POST | `/api/waitlist` | `{email,slug}` |
+| POST | `/api/intake` | `{name,email,wa,need,kind}` → lead |
 | POST | `/webhook/duitku` | Callback Duitku (x-www-form-urlencoded) |
 | GET | `/api/download/:token` | Unduh skill (validasi license) |
 | GET | `/api/health` | Health check |
@@ -87,4 +104,4 @@ pm2 start ecosystem.config.cjs    # http://localhost:3000
 - **Status**: ✅ **PRODUCTION LIVE** — https://sparkmind-obp.pages.dev
 - **D1**: `sparkmind-obp-production` (`a50feb42-43b0-44df-9fbe-41b1343c948c`), migrations applied (remote).
 - **Secrets**: DUITKU_* terpasang (encrypted) di environment production.
-- **Last Updated**: 2026-06-19
+- **Last Updated**: 2026-06-20 (SSOT Batch 2 Operasional + Batch 3 Skala ditambahkan)

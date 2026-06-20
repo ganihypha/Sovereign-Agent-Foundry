@@ -1,0 +1,137 @@
+# SSOT — Single Source of Truth (Canonical Index)
+## SPARKMIND-OBP · Sovereign Agent Foundry
+
+> **Status:** Canonical · **Versi:** v1.0 · **Tanggal:** 2026-06-20
+> **Pemilik:** Reza Estes / Haidar Faras + Gyss (spousal 50/50)
+> **Doctrine induk:** MASTER-ARCHITECT-PROMPT v8.0 · D-1 Truth-Lock · Indonesia-first · Credit-aware
+> **Repo kanonik:** https://github.com/ganihypha/Sovereign-Agent-Foundry
+
+---
+
+## 0. Apa itu dokumen ini
+
+Ini adalah **SSOT (Single Source of Truth)** — satu sumber kebenaran kanonik untuk
+seluruh platform **SparkMind-OBP / Sovereign Agent Foundry**. Disusun dari **deep-dive**
+tiga repo resmi + bundle skill yang diupload owner:
+
+| Sumber | Peran dalam SSOT |
+|---|---|
+| `ganihypha/Sovereign-Agent-Foundry` | **Produk hidup** — marketplace Hono + Cloudflare Pages + D1 + Duitku (PRODUCTION LIVE) |
+| `Elfares24/Cloudflare` | **Pustaka kanonik** infra — 53 dok ekosistem Cloudflare (acuan arsitektur) |
+| `Elfares24/Anthropic-Canon` | **Pustaka kanonik** agentik — 86 artikel Claude/Anthropic (acuan doctrine agent) |
+| Bundle `sovereign-*.zip` (36 skill) | **Inventory yang dimonetisasi** — barang dagangan marketplace |
+
+Tujuan strategis owner (verbatim intent): **memonetisasi SELURUH skill / capability /
+asset / service** yang dimiliki — dalam bentuk digital product, jasa, asset, atau service —
+dengan menutup gap kompetitor dan menemukan **blue ocean / gold mine** monetisasi.
+
+---
+
+## 1. Peta dokumen SSOT (urutan baca)
+
+| # | Dokumen | Pertanyaan yang dijawab | Audiens |
+|---|---|---|---|
+| 00 | **[SSOT-CANONICAL-INDEX](00-SSOT-CANONICAL-INDEX.md)** | Apa keseluruhannya? Di mana semuanya? | Semua |
+| 01 | **[PRD](01-PRD.md)** | APA yang dibangun & untuk siapa? | Product, Eng |
+| 02 | **[DESIGN-DOC](02-DESIGN-DOC.md)** | BAGAIMANA terlihat & terasa? (UX/UI/flow) | Design, Front-end |
+| 03 | **[ARCHITECT-DOC](03-ARCHITECT-DOC.md)** | BAGAIMANA dibangun secara teknis? | Engineering |
+| 04 | **[PRODUCTIONIZED-DOC](04-PRODUCTIONIZED-DOC.md)** | Apa yang sudah LIVE & cara operasinya? | Ops, Eng |
+| 05 | **[MONETIZATION-DOC](05-MONETIZATION-DOC.md)** | Bagaimana menghasilkan uang dari SEMUA capability? | Founder, CFO |
+| 06 | **[STRATEGIC-DOC](06-STRATEGIC-DOC.md)** | Posisi pasar, gap kompetitor, blue ocean | Founder, CMO |
+| 07 | **[STRATEGIC-WINNING-DOC](07-STRATEGIC-WINNING-DOC.md)** | Cara MENANG (moat, wedge, unfair advantage) | Founder |
+| 08 | **[STRATEGIC-DOMINATION-DOC](08-STRATEGIC-DOMINATION-DOC.md)** | Cara DOMINASI pasar (kategori, network effect) | Founder |
+| 09 | **[GTM-DOC](09-GTM-DOC.md)** | Go-to-market: channel, funnel, copy | CMO, Sales |
+| 10 | **[RUNPLAYBOOK-DOC](10-RUNPLAYBOOK-DOC.md)** | SOP harian operasi & rilis | Ops, Eng |
+| 11 | **[LAUNCH-DOC](11-LAUNCH-DOC.md)** | Checklist peluncuran end-to-end | Semua |
+| 12 | **[TODO-ROADMAP-DOC](12-TODO-ROADMAP-DOC.md)** | Apa selanjutnya? Backlog prioritas | Semua |
+| 13 | **[GAP-ANALYSIS-AND-UPGRADE-DOC](13-GAP-ANALYSIS-AND-UPGRADE-DOC.md)** | Gap apa yang sudah ditutup? (G1–G8) | Eng, Founder |
+
+### 1.1 Batch 2 — Operasional (`batch-2-operasional/`)
+
+> Bagaimana **satu sesi / satu agent** mengeksekusi secara terstruktur (D-1 Truth-Lock).
+
+| # | Dokumen | Isi |
+|---|---|---|
+| B2-00 | **[INDEX](batch-2-operasional/B2-00-INDEX.md)** | Peta Batch 2 + non-negotiable operasional |
+| B2-01 | **[RUNBOOKS-PER-FASE](batch-2-operasional/B2-01-RUNBOOKS-PER-FASE.md)** | Runbook copy-run fase F0–F7 + gate |
+| B2-02 | **[API-SPEC-AGEN](batch-2-operasional/B2-02-API-SPEC-AGEN.md)** | Kontrak HTTP API + spesifikasi agen |
+| B2-03 | **[PROMPT-TEMPLATE-PER-ROLE](batch-2-operasional/B2-03-PROMPT-TEMPLATE-PER-ROLE.md)** | Template prompt per role L0.5–L5 |
+| B2-04 | **[SPRINT-PER-SESSION](batch-2-operasional/B2-04-SPRINT-PER-SESSION.md)** | 1 sesi = 1 micro-sprint (S0–S5) |
+| B2-05 | **[MASTER-ARCHITECT-PROMPT-PER-SESSION](batch-2-operasional/B2-05-MASTER-ARCHITECT-PROMPT-PER-SESSION.md)** | Header kanonik pembuka tiap sesi |
+
+### 1.2 Batch 3 — Skala (`batch-3-skala/`)
+
+> Bagaimana **tumbuh, melayani klien, dan bertahan saat insiden** (AaaS).
+
+| # | Dokumen | Isi |
+|---|---|---|
+| B3-00 | **[INDEX](batch-3-skala/B3-00-INDEX.md)** | Peta Batch 3 + non-negotiable skala |
+| B3-01 | **[METRIK-AAAS](batch-3-skala/B3-01-METRIK-AAAS.md)** | KPI Agent-as-a-Service (funnel, retensi, unit-economics) |
+| B3-02 | **[PLAYBOOK-ONBOARDING-KLIEN](batch-3-skala/B3-02-PLAYBOOK-ONBOARDING-KLIEN.md)** | Lead → klien aktif (self-serve & done-for-you) |
+| B3-03 | **[RUNBOOK-INSIDEN](batch-3-skala/B3-03-RUNBOOK-INSIDEN.md)** | Severity, alur respons, komunikasi, post-mortem |
+
+---
+
+## 2. Ringkasan eksekutif (TL;DR)
+
+**SparkMind-OBP** adalah **marketplace 36 sovereign skill agentik** yang dijual sebagai
+**produk digital** (file ZIP `SKILL.md`), dengan **Oasis BI Pro (OBP)** sebagai
+**Merchant-of-Record (MoR)** dan **Duitku** sebagai payment gateway (mode PRODUCTION, uang riil).
+
+- **Status:** ✅ PRODUCTION LIVE — https://sparkmind-obp.pages.dev
+- **Stack:** 100% Cloudflare-Native (Hono + Pages + D1) — ZERO VPS.
+- **Katalog:** 36 skill, 6 sub-brand, harga Rp 59k–149k, **total nilai katalog Rp 3,124,000**.
+- **Doctrine:** 4-Layer Hybrid Lock (Brand → Merchant → Domain → Compliance).
+- **Diferensiasi:** Indonesia-first, payment lokal (Duitku/QRIS/VA), produk = sistem agentik siap-pakai (bukan sekadar prompt).
+
+---
+
+## 3. Doctrine kanonik (Non-Negotiables)
+
+Diturunkan dari MASTER-ARCHITECT-PROMPT v8.0 + D-1 Truth-Lock:
+
+1. **100% Cloudflare-Native** — Workers/Pages + D1/KV/R2. ZERO VPS, ZERO Vercel/Netlify.
+2. **D-1 Truth-Lock** — jujur soal batas platform; tidak ada klaim palsu tentang kapabilitas.
+3. **Indonesia-first** — copy, harga (IDR), dan payment (Duitku) berorientasi pasar Indonesia.
+4. **Credit-aware** — eksekusi hemat token/biaya; riset fokus ke sumber resmi.
+5. **MoR compliance** — disclosure Oasis BI Pro di footer & checkout; brand ledger tercatat.
+6. **HITL gates** — payment / legal / customer-facing / secrets / outbound butuh persetujuan owner.
+7. **Verifikasi (DoD)** — output digate rubrik sebelum dianggap selesai (`sovereign-verify-rubric`).
+
+---
+
+## 4. Arsitektur sistem agentik (2 pack saling melengkapi)
+
+> Inti D-1 Truth-Lock: Genspark AI Dev = **1 agent / sesi**. "Full team" = **role-switching
+> terstruktur**, bukan 16 proses paralel. Hasilnya setara: setiap keputusan dibuat dengan
+> "topi" role yang benar, ter-audit, ter-gate HITL.
+
+```
+PACK A — SOVEREIGN-SKILLS v5.0 (BAGAIMANA eksekusi teknis)
+  master-boot → context-injection → credit-aware (guard)
+    → orchestration-patterns → verify-rubric → zero-trust
+    → workflow-ops → cf-byok-deploy → github-push → fullstack-cycle
+
+PACK B — AGENTIC-TEAM v2.0 (SIAPA yang memutuskan)
+  team-boot → orchestrator (L1)
+    → cofounder (L0.5)
+    → C-Suite: cto · cmo · cpo · cfo · coo (L2)
+    → squads: engineering · product · marketing · sales-cs · opsfinance (L3)
+    → specialists (L4)
+    → claw-actuation · hermes-memory (L5)
+```
+
+Prioritas konflik: **credit-aware (guard) > zero-trust > skill fase > fullstack-cycle
+(orkestrator) > team C-Suite/squad > default system**.
+
+---
+
+## 5. Cara memakai SSOT ini
+
+- **Onboarding owner/partner baru** → baca 00 → 01 → 04 → 05.
+- **Keputusan strategis** → 06 → 07 → 08.
+- **Eksekusi rilis** → 10 → 11 → 12.
+- **Audit teknis** → 03 → 04.
+
+> Setiap dokumen mencantumkan **sumber kanonik** (path repo) agar dapat di-cross-check.
+> SSOT ini di-push ke repo `Sovereign-Agent-Foundry/docs/ssot/` sebagai acuan tunggal.
