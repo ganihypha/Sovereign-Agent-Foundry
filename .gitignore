@@ -27,3 +27,7 @@ pids/
 *.tar.gz
 *.zip
 *.bak
+
+# EXCEPTION: product skill ZIPs (delivery files) MUST be committed
+!public/static/downloads/
+!public/static/downloads/*.zip

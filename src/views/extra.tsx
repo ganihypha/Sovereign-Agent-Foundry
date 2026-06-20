@@ -229,3 +229,85 @@ export const OrderLookup = () => (
     <script src="/static/order.js"></script>
   </div>
 )
+
+// ── Panduan Setup (crystal-clear) — halaman publik untuk pembeli ──
+const SETUP_STEPS = [
+  { n: 1, t: 'Unduh', d: 'Buka /orders (atau email lisensi), masukkan Merchant Order ID, unduh file sovereign-<nama>.zip.', i: 'fa-download' },
+  { n: 2, t: 'Ekstrak', d: 'Unzip filenya. Hasil benar: folder sovereign-<nama>/ berisi SKILL.md.', i: 'fa-file-zipper' },
+  { n: 3, t: 'Tempatkan', d: 'Letakkan di struktur: skills/<nama-skill>/SKILL.md di workspace Anda.', i: 'fa-folder-tree' },
+  { n: 4, t: 'Aktifkan', d: 'Di sesi AI (Genspark AI Dev / Claude), ketik: "aktifkan skill <nama-skill>".', i: 'fa-bolt' },
+  { n: 5, t: 'Verifikasi', d: 'Tanya: "skill apa yang aktif sekarang?". Bila disebut → SIAP PAKAI.', i: 'fa-circle-check' }
+]
+
+export const SetupGuide = () => (
+  <div class="max-w-4xl mx-auto px-5 py-14">
+    <div class="text-center mb-10">
+      <span class="inline-block text-xs font-semibold tracking-wide bg-indigo-600/20 text-indigo-300 px-3 py-1 rounded-full mb-3">
+        PANDUAN PEMBELI
+      </span>
+      <h1 class="text-4xl font-extrabold mb-3">Cara Setup & Pakai Skill Anda</h1>
+      <p class="text-slate-400 max-w-2xl mx-auto">
+        Master super crystal-clear. Dari "baru beli ZIP" → "skill aktif & menghasilkan"
+        dalam <span class="text-indigo-300 font-semibold">&lt; 10 menit</span>. Tanpa bingung, tanpa error.
+      </p>
+    </div>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-10">
+      <h2 class="text-lg font-bold mb-2"><i class="fas fa-rocket text-indigo-400 mr-2"></i>TL;DR (90 detik)</h2>
+      <pre class="bg-slate-950 rounded-lg p-4 text-xs sm:text-sm text-slate-300 overflow-x-auto leading-relaxed">{`1. UNDUH   → /orders → unduh sovereign-<nama>.zip
+2. PASANG  → unzip ke  skills/<nama-skill>/SKILL.md
+3. AKTIFKAN→ di sesi AI ketik: "aktifkan skill <nama-skill>"`}</pre>
+    </section>
+
+    <h2 class="text-2xl font-bold mb-1">5 Langkah</h2>
+    <p class="text-slate-400 text-sm mb-6">Ikuti urut. Centang tiap langkah selesai.</p>
+    <ol class="space-y-4 mb-12">
+      {SETUP_STEPS.map((s) => (
+        <li class="flex gap-4 bg-slate-900 border border-slate-800 rounded-xl p-5">
+          <div class="shrink-0 w-11 h-11 rounded-full bg-indigo-600/20 text-indigo-300 grid place-items-center font-bold">
+            {s.n}
+          </div>
+          <div>
+            <p class="font-semibold mb-1"><i class={`fas ${s.i} text-indigo-400 mr-2`}></i>{s.t}</p>
+            <p class="text-sm text-slate-400">{s.d}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-10">
+      <h2 class="text-lg font-bold mb-3"><i class="fas fa-circle-question text-amber-400 mr-2"></i>Apa yang Anda beli?</h2>
+      <p class="text-sm text-slate-400 mb-3">
+        Anda membeli <span class="text-slate-200 font-semibold">PLAYBOOK AGENTIK</span> — file
+        <code class="bg-slate-800 px-1.5 py-0.5 rounded text-indigo-300">SKILL.md</code> berisi instruksi
+        yang membuat AI agent bertindak seperti ahli/role tertentu. Bukan software yang di-install.
+      </p>
+      <p class="text-sm text-slate-400">
+        <span class="text-slate-200">Analogi:</span> skill = buku resep ahli; agent = koki.
+        Kasih resepnya → koki langsung masak sesuai standar ahli.
+      </p>
+    </section>
+
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-10">
+      <h2 class="text-lg font-bold mb-3"><i class="fas fa-screwdriver-wrench text-rose-400 mr-2"></i>Troubleshooting cepat</h2>
+      <ul class="text-sm text-slate-400 space-y-2">
+        <li><b class="text-slate-200">Skill tak ditemukan</b> → pastikan struktur <code class="bg-slate-800 px-1 rounded">skills/&lt;nama&gt;/SKILL.md</code> (ada folder pembungkus).</li>
+        <li><b class="text-slate-200">Tak ter-trigger</b> → ketik eksplisit "aktifkan skill &lt;nama&gt;".</li>
+        <li><b class="text-slate-200">ZIP korup</b> → unduh ulang di /orders.</li>
+        <li><b class="text-slate-200">LLM tak dukung skills</b> → salin seluruh isi SKILL.md ke awal prompt (cara universal).</li>
+      </ul>
+    </section>
+
+    <div class="flex flex-wrap gap-3 justify-center">
+      <a href="/orders" class="bg-indigo-600 hover:bg-indigo-500 transition rounded-lg px-6 py-3 font-semibold">
+        <i class="fas fa-box-open mr-2"></i>Cek Pesanan & Unduh
+      </a>
+      <a href="/catalog" class="border border-slate-700 hover:border-indigo-500 transition rounded-lg px-6 py-3 font-semibold">
+        <i class="fas fa-grip mr-2"></i>Lihat Katalog
+      </a>
+      <a href="/legal/compliance" class="border border-slate-700 hover:border-indigo-500 transition rounded-lg px-6 py-3 font-semibold">
+        <i class="fas fa-headset mr-2"></i>Support
+      </a>
+    </div>
+  </div>
+)

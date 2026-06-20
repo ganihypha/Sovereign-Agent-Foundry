@@ -4,7 +4,7 @@ import { serveStatic } from 'hono/cloudflare-workers'
 import { renderer } from './renderer'
 import { Home, Catalog, Pricing, ProductDetail, ThankYou, About } from './views/pages'
 import {
-  LegalHub, LegalPage, DoneForYou, Partner, OrderLookup, CheckoutOffer
+  LegalHub, LegalPage, DoneForYou, Partner, OrderLookup, CheckoutOffer, SetupGuide
 } from './views/extra'
 import { PRODUCTS, findProduct } from './data/products'
 import { BRANDS } from './data/brands'
@@ -47,6 +47,7 @@ app.get('/product/:slug', (c) => {
 })
 
 /* ── Legal Hub (enterprise-grade compliance) ── */
+app.get('/setup', (c) => c.render(<SetupGuide />, { title: 'Panduan Setup · SparkMind' }))
 app.get('/legal', (c) => c.render(<LegalHub />, { title: 'Legal Hub · SparkMind' }))
 app.get('/legal/:slug', (c) => {
   const d = findLegal(c.req.param('slug'))
@@ -265,11 +266,18 @@ app.get('/api/download/:token', async (c) => {
   ).bind(lic.id).run()
 
   const prod = findProduct(lic.product_slug)
-  // Catatan: file biner skill di-host di R2/asset; di sini kembalikan metadata unduhan.
+  // File biner skill di-host sebagai static asset di /downloads/<file_key>.
+  // Endpoint ini memvalidasi lisensi lalu mengembalikan URL unduhan REAL + panduan setup.
+  const origin = new URL(c.req.url).origin
+  const fileKey = prod?.file_key
+  const downloadUrl = fileKey ? `${origin}/static/downloads/${fileKey}` : null
   return c.json({
     ok: true,
     product_slug: lic.product_slug,
-    file: prod?.file_key,
+    product_name: prod?.name,
+    file: fileKey,
+    download_url: downloadUrl,
+    setup_guide_url: `${origin}/setup`,
     downloads_remaining: lic.max_downloads - lic.download_count - 1
   })
 })
@@ -367,7 +375,7 @@ app.get('/robots.txt', (c) =>
 app.get('/sitemap.xml', (c) => {
   const base = 'https://sparkmind-obp.pages.dev'
   const staticUrls = [
-    '/', '/catalog', '/pricing', '/about', '/done-for-you', '/partner', '/orders', '/legal',
+    '/', '/catalog', '/pricing', '/about', '/done-for-you', '/partner', '/orders', '/setup', '/legal',
     ...LEGAL_DOCS.map((d) => `/legal/${d.slug}`),
     '/checkout/all-access-bundle', '/checkout/founder-pass'
   ]

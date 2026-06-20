@@ -46,6 +46,8 @@ Hono + Cloudflare Pages + D1 (SQLite) + TypeScript + TailwindCSS (CDN). 100% Clo
 | GET | `/done-for-you` | Halaman jasa + intake |
 | GET | `/partner` | Reseller/White-label & MoR-aaS + intake |
 | GET | `/orders` | Buyer dashboard (cek pesanan + unduh ulang) |
+| GET | `/setup` | **Panduan setup & pakai skill (crystal-clear)** |
+| GET | `/static/downloads/:file.zip` | **File skill ZIP (delivery produk)** |
 | GET | `/robots.txt` `/sitemap.xml` | SEO |
 | GET | `/api/products` | List 36 produk |
 | GET | `/api/product/:slug` | Detail produk |
@@ -87,17 +89,23 @@ npm run db:migrate:local && npm run db:seed
 pm2 start ecosystem.config.cjs    # http://localhost:3000
 ```
 
+## Buyer Setup Guide (BARU — crystal-clear)
+- ✅ **File skill REAL terkirim** — 38 sovereign skill di-bundle jadi ZIP di `public/static/downloads/` + **All-Access Bundle** (`all-access-bundle.zip`, 38 skill + panduan).
+- ✅ Endpoint `/api/download/:token` kini mengembalikan **`download_url` REAL** (`/static/downloads/<file_key>`) + `setup_guide_url`.
+- ✅ **Halaman `/setup`** — master super crystal-clear, cara setup & pakai skill (<10 menit, anti-error). Sumber: `docs/SETUP-GUIDE.md`.
+- ✅ Folder `skills/` kanonik (38 SKILL.md) disertakan di repo sebagai source-of-truth produk.
+
 ## Features Not Yet Implemented
-- File biner skill di R2 (saat ini endpoint download kembalikan metadata).
+- Migrasi file skill dari static asset → **R2** (untuk skala & signed-URL kedaluwarsa).
 - Pengiriman email otomatis (license link) — perlu integrasi REST (Resend/Mailgun).
-- Dashboard pembeli & admin.
 
 ## Recommended Next Steps
 1. ✅ ~~D1 production + secrets Duitku production~~ (SELESAI).
-2. Upload file skill ke R2, sambungkan ke `/api/download/:token`.
+2. ✅ ~~File skill terkirim sebagai ZIP + panduan setup buyer~~ (SELESAI — static asset).
 3. Lakukan 1 transaksi nominal kecil live untuk validasi callback `paid` end-to-end.
-4. Bind custom domain (sparkmind.web.id / oasis-bi-pro.web.id) + update `DUITKU_CALLBACK_URL`/`DUITKU_RETURN_URL`.
-5. Kirim email license otomatis (Resend/Mailgun via REST).
+4. (Skala) Pindahkan ZIP ke R2 + signed URL kedaluwarsa di `/api/download/:token`.
+5. Bind custom domain (sparkmind.web.id / oasis-bi-pro.web.id) + update `DUITKU_CALLBACK_URL`/`DUITKU_RETURN_URL`.
+6. Kirim email license otomatis (Resend/Mailgun via REST).
 
 ## Deployment
 - **Platform**: Cloudflare Pages (akun BYOK: ganihypha@gmail.com)

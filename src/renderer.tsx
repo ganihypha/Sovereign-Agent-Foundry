@@ -90,6 +90,7 @@ export const renderer = jsxRenderer(({ children, title }) => {
                 <div class="space-y-1">
                   <p class="text-slate-500 font-semibold mb-1">Akun</p>
                   <a href="/orders" class="block hover:text-indigo-400">Cek Pesanan</a>
+                  <a href="/setup" class="block hover:text-indigo-400">Panduan Setup</a>
                   <a href="/about" class="block hover:text-indigo-400">Tentang</a>
                   <a href="/admin" class="block hover:text-indigo-400">Admin</a>
                 </div>
