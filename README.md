@@ -26,10 +26,18 @@ Hono + Cloudflare Pages + D1 (SQLite) + TypeScript + TailwindCSS (CDN). 100% Clo
 > - **B4-00** Index · **B4-01** Repositioning · **B4-02** Target-Market (TAM/SAM/SOM + 5 ICP)
 > - **B4-03** Productized-Offers (katalog SKU mainstream + pricing) · **B4-04** Winning-GTM-Broad
 > - **B4-05** Migration-Map (36 skill → produk baru + perubahan kode minimal + roadmap R1–R4)
+> - **B4-06** Outcome-Economy-Thesis (riset pasar 2025–2026: OaaS / RaaS — validasi "jual hasil")
+> - **B4-07** Execution-Log (Sprint R1: blueprint → kode live — rute `/solutions` & `/developers`)
 >
 > **Dual-front:** pintu mainstream (UMKM/SMB) = mesin uang utama; pintu developer (skill DIY) =
 > top-of-funnel & proof. Stack, MoR (OBP), Duitku, D1 **tidak berubah** — hanya kemasan, pasar,
 > bahasa, & harga.
+>
+> ✅ **PIVOT SUDAH DIEKSEKUSI DI KODE (Sprint R1):** beranda `/` kini **Outcome Home** ("Bikin
+> bisnismu otomatis & online — bayar pakai QRIS"); katalog hasil di **`/solutions`** (9 solusi
+> outcome) + **`/solutions/:slug`**; pintu developer di **`/developers`**; `/foundry` & `/catalog`
+> tetap hidup (backlink-safe). 6 SKU outcome baru masuk engine checkout (`care-plan`,
+> `ai-staff-cs/marketing/admin`, `template-konten`, `canon-course`). Lihat **B4-07**.
 
 ## Currently Completed Features
 - ✅ SSR landing, katalog (36 skill, 6 sub-brand), pricing, product detail, about, thank-you.
@@ -48,20 +56,25 @@ Hono + Cloudflare Pages + D1 (SQLite) + TypeScript + TailwindCSS (CDN). 100% Clo
   - **Batch 1 — Fondasi & Produk** (00–13): PRD, Design, Architect, Productionized, Monetization, Strategic, GTM, Runplaybook, Launch, Roadmap, Gap-Analysis.
   - **Batch 2 — Operasional** (`batch-2-operasional/`, B2-00..B2-05): runbooks per-fase, API spec agen, template prompt per role, sprint per session, master architect prompt per session.
   - **Batch 3 — Skala** (`batch-3-skala/`, B3-00..B3-03): metrik AaaS, playbook onboarding klien, runbook insiden.
-  - **⭐ Batch 4 — Strategic Repositioning** (`batch-4-repositioning/`, B4-00..B4-05): repositioning "skill mart → Outcome Foundry", target-market pasar luas (30jt+ UMKM), productized-offers (multi-SKU mainstream), winning-GTM pasar massal, migration-map (aset lama → produk baru). **Men-supersede framing pasar pada 06/07/08.**
+  - **⭐ Batch 4 — Strategic Repositioning** (`batch-4-repositioning/`, B4-00..B4-07): repositioning "skill mart → Outcome Foundry", target-market pasar luas (30jt+ UMKM), productized-offers (multi-SKU mainstream), winning-GTM pasar massal, migration-map (aset lama → produk baru), **B4-06 Outcome-Economy-Thesis** (riset pasar OaaS/RaaS), **B4-07 Execution-Log** (bukti pivot dieksekusi di kode). **Men-supersede framing pasar pada 06/07/08.**
+- ✅ **Outcome Foundry pivot (Sprint R1) LIVE di kode** — `src/data/solutions.ts` (9 solusi + 6 SKU outcome), `src/views/solutions.tsx` (Outcome Home, katalog, detail), rute `/solutions` `/developers` `/foundry`, engine checkout merge (`OFFER_AS_PRODUCT` + `SOLUTION_AS_PRODUCT`).
 
 ## Functional Entry URIs
 | Method | Path | Keterangan |
 |---|---|---|
-| GET | `/` | Landing |
-| GET | `/catalog` | Katalog per sub-brand |
+| GET | `/` | **Outcome Home** (beranda pivot — jual hasil) |
+| GET | `/solutions` | **Katalog solusi outcome** (9 solusi hasil-jadi) ⭐ |
+| GET | `/solutions/:slug` | **Detail solusi** + plan DIY/DWY/DFY ⭐ |
+| GET | `/developers` | **Pintu developer** (katalog 36 skill DIY) ⭐ |
+| GET | `/foundry` | Outcome Home (alias) |
+| GET | `/catalog` | Katalog per sub-brand (302 → `/developers`) |
 | GET | `/pricing` | Tiering harga IDR |
 | GET | `/product/:slug` | Detail + form checkout |
 | GET | `/about` `/docs` | Doctrine 4-layer |
 | GET | `/thank-you` | Halaman return |
 | GET | `/legal` | Legal Hub (index) |
 | GET | `/legal/:slug` | `terms` · `refund` · `privacy` · `compliance` |
-| GET | `/checkout/:slug` | `all-access-bundle` · `founder-pass` (offer checkout) |
+| GET | `/checkout/:slug` | offer (`all-access-bundle` · `founder-pass`) **+ SKU outcome** (`care-plan` · `ai-staff-cs` · `ai-staff-marketing` · `ai-staff-admin` · `template-konten` · `canon-course`) |
 | GET | `/done-for-you` | Halaman jasa + intake |
 | GET | `/partner` | Reseller/White-label & MoR-aaS + intake |
 | GET | `/orders` | Buyer dashboard (cek pesanan + unduh ulang) |
@@ -131,4 +144,4 @@ pm2 start ecosystem.config.cjs    # http://localhost:3000
 - **Status**: ✅ **PRODUCTION LIVE** — https://sparkmind-obp.pages.dev
 - **D1**: `sparkmind-obp-production` (`a50feb42-43b0-44df-9fbe-41b1343c948c`), migrations applied (remote).
 - **Secrets**: DUITKU_* terpasang (encrypted) di environment production.
-- **Last Updated**: 2026-06-20 (⭐ SSOT **Batch 4 — Strategic Repositioning** ditambahkan: "skill mart niche → Outcome Foundry" untuk pasar luas 30jt+ UMKM/SMB; positioning/target-market/productized-offers/GTM/migration-map)
+- **Last Updated**: 2026-06-20 (⭐ **Outcome Foundry pivot DIEKSEKUSI**: rute `/solutions` `/developers` `/foundry` live, 9 solusi outcome + 6 SKU baru di engine checkout, Outcome Home jadi beranda; SSOT diperluas **B4-06 Outcome-Economy-Thesis** + **B4-07 Execution-Log**; index 00 & B4-00 + notice 06/07/08 disinkronkan)

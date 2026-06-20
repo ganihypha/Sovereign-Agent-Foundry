@@ -85,6 +85,8 @@ dengan menutup gap kompetitor dan menemukan **blue ocean / gold mine** monetisas
 | B4-03 | **[PRODUCTIZED-OFFERS](batch-4-repositioning/B4-03-PRODUCTIZED-OFFERS-DOC.md)** | Setiap aset → produk jadi: katalog SKU mainstream + pricing |
 | B4-04 | **[WINNING-GTM-BROAD](batch-4-repositioning/B4-04-WINNING-GTM-BROAD-DOC.md)** | Cara menang di pasar luas: channel, funnel, copy non-teknis, partner |
 | B4-05 | **[MIGRATION-MAP](batch-4-repositioning/B4-05-MIGRATION-MAP-DOC.md)** | 36 skill → produk baru + perubahan kode minimal + roadmap R1–R4 |
+| B4-06 | **[OUTCOME-ECONOMY-THESIS](batch-4-repositioning/B4-06-OUTCOME-ECONOMY-THESIS-DOC.md)** | Tesis pasar (web research): Outcome Economy / OaaS / RaaS — validasi pivot "jual hasil" + moat |
+| B4-07 | **[EXECUTION-LOG](batch-4-repositioning/B4-07-EXECUTION-LOG-DOC.md)** | Log eksekusi Sprint R1: pivot dari blueprint → kode live (`/solutions`, `/developers`) + smoke test |
 
 ---
 

@@ -10,6 +10,10 @@
 > **[B4-02 §3 ICP](batch-4-repositioning/B4-02-TARGET-MARKET-DOC.md)** &
 > **[B4-03 Productized-Offers](batch-4-repositioning/B4-03-PRODUCTIZED-OFFERS-DOC.md)**.
 > Network effect (marketplace 2-sisi, MoR-aaS, franchise) diperkuat di Batch 4.
+>
+> 🆕 **Kategori "Outcome Foundry" kini nyata di produk:** landasan pasar di
+> **[B4-06](batch-4-repositioning/B4-06-OUTCOME-ECONOMY-THESIS-DOC.md)**, bukti eksekusi
+> (rute `/solutions`, dual-front) di **[B4-07](batch-4-repositioning/B4-07-EXECUTION-LOG-DOC.md)**.
 
 ---
 

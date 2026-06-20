@@ -3,6 +3,7 @@ import { cors } from 'hono/cors'
 import { serveStatic } from 'hono/cloudflare-workers'
 import { renderer } from './renderer'
 import { Home, Catalog, Pricing, ProductDetail, ThankYou, About } from './views/pages'
+import { OutcomeHome, SolutionsCatalog, SolutionDetail } from './views/solutions'
 import {
   LegalHub, LegalPage, DoneForYou, Partner, OrderLookup, CheckoutOffer, SetupGuide
 } from './views/extra'
@@ -10,6 +11,14 @@ import { PRODUCTS, findProduct } from './data/products'
 import { BRANDS } from './data/brands'
 import { findLegal, LEGAL_DOCS } from './data/legal'
 import { findOffer, OFFER_AS_PRODUCT } from './data/offers'
+import { SOLUTIONS, findSolution, SOLUTION_AS_PRODUCT } from './data/solutions'
+
+// Engine checkout — gabungan SKU offer (bundle/founder-pass) + solusi (care-plan/ai-staff/course).
+// Truth-Lock: hanya slug terdaftar di sini yang bisa checkout one-time/subscription.
+const CHECKOUT_PRODUCTS: Record<string, { name: string; price_idr: number; brand: string }> = {
+  ...OFFER_AS_PRODUCT,
+  ...SOLUTION_AS_PRODUCT
+}
 import { getGateway } from './lib/gateway'
 import { sendLicenseEmail } from './lib/email'
 import { AdminDashboard, AdminLogin, DownloadPage, type AdminStats } from './views/admin'
@@ -33,8 +42,19 @@ app.use('/static/*', serveStatic({ root: './public' }))
 app.use(renderer)
 
 /* ───────────────────────── Pages (SSR) ───────────────────────── */
-app.get('/', (c) => c.render(<Home />, { title: 'SparkMind · Sovereign Agent Foundry' }))
-app.get('/catalog', (c) => c.render(<Catalog />, { title: 'Katalog · SparkMind' }))
+// ── Outcome Foundry (pivot Batch 4): landing & katalog publik = HASIL ──
+app.get('/', (c) => c.render(<OutcomeHome />, { title: 'SparkMind — Bikin bisnismu otomatis & online' }))
+app.get('/solutions', (c) => c.render(<SolutionsCatalog />, { title: 'Solusi · SparkMind' }))
+app.get('/solutions/:slug', (c) => {
+  const s = findSolution(c.req.param('slug'))
+  if (!s) return c.notFound()
+  return c.render(<SolutionDetail {...s} />, { title: `${s.name} · SparkMind` })
+})
+
+// ── Jalur developer (skill mentah = mesin) ──
+app.get('/developers', (c) => c.render(<Catalog />, { title: 'Developer · 36 Sovereign Skill · SparkMind' }))
+app.get('/foundry', (c) => c.render(<Home />, { title: 'Sovereign Agent Foundry (mesin) · SparkMind' }))
+app.get('/catalog', (c) => c.redirect('/developers'))
 app.get('/pricing', (c) => c.render(<Pricing />, { title: 'Harga · SparkMind' }))
 app.get('/about', (c) => c.render(<About />, { title: 'Tentang · SparkMind' }))
 app.get('/docs', (c) => c.redirect('/about'))
@@ -57,9 +77,28 @@ app.get('/legal/:slug', (c) => {
 
 /* ── Offers: checkout bundle / Founder Pass ── */
 app.get('/checkout/:slug', (c) => {
-  const o = findOffer(c.req.param('slug'))
-  if (!o || !OFFER_AS_PRODUCT[o.slug]) return c.notFound()
-  return c.render(<CheckoutOffer {...o} />, { title: `${o.name} · SparkMind` })
+  const slug = c.req.param('slug')
+  // Offer terdaftar (punya view kaya) → render CheckoutOffer.
+  const o = findOffer(slug)
+  if (o && OFFER_AS_PRODUCT[o.slug]) {
+    return c.render(<CheckoutOffer {...o} />, { title: `${o.name} · SparkMind` })
+  }
+  // SKU solusi (care-plan/ai-staff/course/template) → checkout generik via SetupGuide-less form.
+  const sku = CHECKOUT_PRODUCTS[slug]
+  if (sku) {
+    return c.render(<CheckoutOffer {...{
+      slug,
+      name: sku.name,
+      tagline: 'Pembayaran aman via Merchant-of-Record (Oasis BI Pro) lewat Duitku.',
+      model: 'one-time' as const,
+      price_idr: sku.price_idr,
+      priceLabel: 'Rp ' + sku.price_idr.toLocaleString('id-ID'),
+      features: ['Akses solusi setelah pembayaran terkonfirmasi', 'Bayar pakai QRIS / VA / e-wallet', 'Faktur & konfirmasi via email'],
+      cta: 'Bayar Sekarang',
+      ctaHref: `/checkout/${slug}`
+    }} />, { title: `${sku.name} · SparkMind` })
+  }
+  return c.notFound()
 })
 
 /* ── High-ticket & partner & buyer dashboard ── */
@@ -89,8 +128,8 @@ app.post('/api/checkout', async (c) => {
   const { slug, email, name } = body ?? {}
   if (!slug || !email || !name) return c.json({ error: 'missing_fields' }, 400)
 
-  // Produk satuan ATAU offer (all-access-bundle / founder-pass)
-  const offer = OFFER_AS_PRODUCT[slug]
+  // Produk satuan (skill) ATAU offer/solusi (bundle/founder-pass/care-plan/ai-staff/course)
+  const offer = CHECKOUT_PRODUCTS[slug]
   const product = offer
     ? { name: offer.name, price_idr: offer.price_idr, brand: offer.brand }
     : findProduct(slug)
@@ -225,7 +264,7 @@ app.post('/webhook/duitku', async (c) => {
         `SELECT customer_email FROM orders WHERE id=?`
       ).bind(order.id).first()
       if (buyer?.customer_email) {
-        const offer = OFFER_AS_PRODUCT[order.product_slug]
+        const offer = CHECKOUT_PRODUCTS[order.product_slug]
         const productName = offer ? offer.name : (prod?.name ?? order.product_slug)
         const baseUrl = new URL(c.req.url).origin
         // jangan blokir respons callback bila email gagal — best-effort
@@ -375,12 +414,13 @@ app.get('/robots.txt', (c) =>
 app.get('/sitemap.xml', (c) => {
   const base = 'https://sparkmind-obp.pages.dev'
   const staticUrls = [
-    '/', '/catalog', '/pricing', '/about', '/done-for-you', '/partner', '/orders', '/setup', '/legal',
+    '/', '/solutions', '/developers', '/foundry', '/pricing', '/about', '/done-for-you', '/partner', '/orders', '/setup', '/legal',
     ...LEGAL_DOCS.map((d) => `/legal/${d.slug}`),
     '/checkout/all-access-bundle', '/checkout/founder-pass'
   ]
+  const solutionUrls = SOLUTIONS.map((s) => `/solutions/${s.slug}`)
   const productUrls = PRODUCTS.map((p) => `/product/${p.slug}`)
-  const urls = [...staticUrls, ...productUrls]
+  const urls = [...staticUrls, ...solutionUrls, ...productUrls]
     .map((u) => `  <url><loc>${base}${u}</loc></url>`)
     .join('\n')
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`

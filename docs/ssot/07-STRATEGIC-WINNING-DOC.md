@@ -10,6 +10,10 @@
 > (akselerasi agent) & data lintas-vertikal. Baca cara-menang yang berlaku di
 > **[B4-04 Winning-GTM-Broad](batch-4-repositioning/B4-04-WINNING-GTM-BROAD-DOC.md)**. Moat
 > teknis di dokumen ini tetap valid sebagai fondasi.
+>
+> 🆕 **Moat baru tervalidasi:** riset Outcome Economy menegaskan *trust & proof* sebagai
+> diferensiator utama (**[B4-06](batch-4-repositioning/B4-06-OUTCOME-ECONOMY-THESIS-DOC.md)**) —
+> wedge "produk hasil-jadi" **sudah hidup di kode** (**[B4-07](batch-4-repositioning/B4-07-EXECUTION-LOG-DOC.md)**).
 
 ---
 

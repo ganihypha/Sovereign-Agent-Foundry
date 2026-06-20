@@ -10,30 +10,30 @@ export const renderer = jsxRenderer(({ children, title }) => {
         <title>{title ?? 'SparkMind · Sovereign Agent Foundry'}</title>
         <meta
           name="description"
-          content="SparkMind — Sovereign Agent Foundry: marketplace 36 skill agentik siap-pakai berbahasa Indonesia. Pembayaran lokal patuh (Duitku) via Oasis BI Pro sebagai Merchant-of-Record."
+          content="SparkMind — Outcome Foundry: bikin bisnismu otomatis & online. Aplikasi kasir, toko online, CS otomatis, konten, event, donasi & app custom — sudah jalan, Bahasa Indonesia, bayar QRIS/VA via Merchant-of-Record (Oasis BI Pro)."
         />
-        <meta name="keywords" content="skill agentik, AI agent Indonesia, sovereign agent foundry, marketplace AI, Cloudflare, Duitku, SparkMind" />
+        <meta name="keywords" content="aplikasi UMKM, otomasi bisnis, AI untuk bisnis Indonesia, toko online, kasir online, CS otomatis, app custom, QRIS, SparkMind, Outcome Foundry" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://sparkmind-obp.pages.dev" />
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="SparkMind · Sovereign Agent Foundry" />
-        <meta property="og:title" content={title ?? 'SparkMind · Sovereign Agent Foundry'} />
-        <meta property="og:description" content="Marketplace 36 skill agentik siap-pakai. Dari 1 perintah → app live & ter-deploy. Payment lokal patuh." />
+        <meta property="og:title" content={title ?? 'SparkMind — Bikin bisnismu otomatis & online'} />
+        <meta property="og:description" content="Ceritakan masalah bisnismu. Pulang bawa aplikasinya — sudah jalan, bayar pakai QRIS. Cepat, Bahasa Indonesia, harga IDR." />
         <meta property="og:url" content="https://sparkmind-obp.pages.dev" />
         <meta property="og:image" content="https://sparkmind-obp.pages.dev/static/og.svg" />
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title ?? 'SparkMind · Sovereign Agent Foundry'} />
-        <meta name="twitter:description" content="Marketplace skill agentik Indonesia-first. Bayar aman via MoR (Oasis BI Pro) lewat Duitku." />
+        <meta name="twitter:title" content={title ?? 'SparkMind — Bikin bisnismu otomatis & online'} />
+        <meta name="twitter:description" content="Aplikasi bisnis yang sudah jadi & jalan. Bahasa Indonesia, bayar QRIS/VA via MoR (Oasis BI Pro)." />
         <meta name="twitter:image" content="https://sparkmind-obp.pages.dev/static/og.svg" />
         {/* Structured data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Organization',
-          name: 'SparkMind — Sovereign Agent Foundry',
+          name: 'SparkMind — Outcome Foundry',
           url: 'https://sparkmind-obp.pages.dev',
-          description: 'Marketplace skill agentik siap-pakai berbahasa Indonesia dengan payment lokal patuh.',
+          description: 'Outcome Foundry: mengubah kebutuhan bisnis jadi aplikasi & sistem yang langsung jalan. Bahasa Indonesia, harga IDR, bayar QRIS/VA via Merchant-of-Record.',
           brand: 'SparkMind',
           sameAs: ['https://github.com/ganihypha/Sovereign-Agent-Foundry']
         }) }} />
@@ -51,15 +51,15 @@ export const renderer = jsxRenderer(({ children, title }) => {
               <i class="fas fa-bolt text-indigo-400"></i>
               <span>SparkMind</span>
               <span class="text-xs font-normal text-slate-500 hidden sm:inline">
-                Sovereign Agent Foundry
+                Outcome Foundry
               </span>
             </a>
             <div class="flex items-center gap-5 text-sm">
-              <a href="/catalog" class="hover:text-indigo-400 transition">Katalog</a>
-              <a href="/pricing" class="hover:text-indigo-400 transition hidden sm:inline">Harga</a>
-              <a href="/about" class="hover:text-indigo-400 transition hidden sm:inline">Tentang</a>
+              <a href="/solutions" class="hover:text-indigo-400 transition">Solusi</a>
+              <a href="/done-for-you" class="hover:text-indigo-400 transition hidden sm:inline">Done-for-You</a>
+              <a href="/developers" class="hover:text-indigo-400 transition hidden sm:inline">Developer</a>
               <a
-                href="/catalog"
+                href="/solutions"
                 class="bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-lg font-medium transition"
               >
                 Mulai
@@ -81,10 +81,10 @@ export const renderer = jsxRenderer(({ children, title }) => {
               </div>
               <div class="flex gap-8 text-xs">
                 <div class="space-y-1">
-                  <p class="text-slate-500 font-semibold mb-1">Produk</p>
-                  <a href="/catalog" class="block hover:text-indigo-400">Katalog</a>
-                  <a href="/pricing" class="block hover:text-indigo-400">Harga & Bundle</a>
+                  <p class="text-slate-500 font-semibold mb-1">Solusi</p>
+                  <a href="/solutions" class="block hover:text-indigo-400">Katalog Solusi</a>
                   <a href="/done-for-you" class="block hover:text-indigo-400">Done-for-You</a>
+                  <a href="/developers" class="block hover:text-indigo-400">Jalur Developer</a>
                   <a href="/partner" class="block hover:text-indigo-400">Partner</a>
                 </div>
                 <div class="space-y-1">

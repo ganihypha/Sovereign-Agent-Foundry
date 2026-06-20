@@ -65,6 +65,8 @@ beli sekali, pakai sendiri             →  langganan + jasa + hasil terukur
 | **B4-03** | **[PRODUCTIZED-OFFERS](B4-03-PRODUCTIZED-OFFERS-DOC.md)** | Setiap aset → produk jadi: katalog SKU mainstream, pricing, packaging |
 | **B4-04** | **[WINNING-GTM-BROAD](B4-04-WINNING-GTM-BROAD-DOC.md)** | Cara menang di pasar luas: channel, funnel, copy non-teknis, partnership |
 | **B4-05** | **[MIGRATION-MAP](B4-05-MIGRATION-MAP-DOC.md)** | Pemetaan: aset lama (36 skill) → produk baru; perubahan kode & roadmap eksekusi |
+| **B4-06** | **[OUTCOME-ECONOMY-THESIS](B4-06-OUTCOME-ECONOMY-THESIS-DOC.md)** | Tesis pasar (web research 2025–2026): Outcome Economy / OaaS / RaaS — mengapa "jual hasil" adalah arah industri & moat |
+| **B4-07** | **[EXECUTION-LOG](B4-07-EXECUTION-LOG-DOC.md)** | Log eksekusi Sprint R1: blueprint → kode live (`solutions.ts`, rute `/solutions`, `/developers`); smoke test; sisa R2–R4 |
 
 ---
 
@@ -108,4 +110,7 @@ beli sekali, pakai sendiri             →  langganan + jasa + hasil terukur
 - **Memperkaya:** 05-MONETIZATION (multi-SKU), 09-GTM (channel mainstream), 01-PRD (ICP baru).
 - **Diturunkan ke eksekusi:** B4-05 → 12-TODO-ROADMAP (backlog), B2 (runbook), B3 (skala).
 
-> **Urutan baca disarankan:** B4-00 → B4-01 → B4-02 → B4-03 → B4-04 → B4-05.
+> **Urutan baca disarankan:** B4-00 → B4-01 → B4-02 → B4-03 → B4-04 → B4-05 → B4-06 → B4-07.
+>
+> **B4-06** memberi landasan pasar (kenapa "outcome" adalah arah industri, bukan opini lokal);
+> **B4-07** membuktikan bahwa pivot ini sudah **dieksekusi di kode** (bukan sekadar dokumen).

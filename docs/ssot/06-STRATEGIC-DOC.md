@@ -10,6 +10,11 @@
 > baca **[B4-01 Repositioning](batch-4-repositioning/B4-01-REPOSITIONING-DOC.md)** &
 > **[B4-02 Target-Market](batch-4-repositioning/B4-02-TARGET-MARKET-DOC.md)**. Dokumen 06 ini
 > dipertahankan sebagai **konteks/asal-usul** (gap niche yang memicu reposition).
+>
+> 🆕 **Validasi & status eksekusi:** tesis "jual hasil" kini didukung riset pasar
+> (**[B4-06 Outcome-Economy-Thesis](batch-4-repositioning/B4-06-OUTCOME-ECONOMY-THESIS-DOC.md)**)
+> dan **sudah dieksekusi di kode** — rute `/solutions` & `/developers` live
+> (**[B4-07 Execution-Log](batch-4-repositioning/B4-07-EXECUTION-LOG-DOC.md)**).
 
 ---
 
