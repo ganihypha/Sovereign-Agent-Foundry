@@ -1,9 +1,9 @@
 # SPARKMIND-OBP — Sovereign Agent Foundry
 
 ## Project Overview
-- **Name**: SPARKMIND-OBP-HYBRID v2.0
-- **Goal**: Marketplace 36 *sovereign skill* agentik dengan **Oasis BI Pro (OBP)** sebagai **Merchant-of-Record (MoR)** untuk ekosistem SparkMind, gateway pembayaran **Duitku**.
-- **Doctrine**: 4-Layer Hybrid Lock — Brand (SparkMind) · Merchant (Oasis BI Pro) · Domain (sub-brand) · Compliance (brand ledger).
+- **Name**: SparkMind — **Outcome Foundry** (di atas mesin Sovereign Agent Foundry v2.0)
+- **Goal**: **Outcome-as-a-Service (OaaS)** untuk UMKM/SMB Indonesia — mengubah masalah bisnis menjadi **hasil yang sudah jalan** (aplikasi, otomasi, sistem). **36 sovereign skill = mesin**; yang dijual = **outcome** (paket hibrida: Setup + langganan + jasa). Pembayaran **QRIS/VA** via **Oasis BI Pro (OBP)** sebagai **Merchant-of-Record (MoR)** lewat **Duitku**.
+- **Doctrine**: 4-Layer Hybrid Lock — Brand (SparkMind) · Merchant (Oasis BI Pro) · Domain (sub-brand) · Compliance (brand ledger) · D-1 Truth-Lock · Indonesia-first · Credit-aware.
 
 ## URLs
 - **Production (Cloudflare Pages)**: https://sparkmind-obp.pages.dev
@@ -13,21 +13,25 @@
 ## Tech Stack
 Hono + Cloudflare Pages + D1 (SQLite) + TypeScript + TailwindCSS (CDN). 100% Cloudflare-Native.
 
-## ⭐ Strategic Repositioning (SSOT Batch 4 — TERBARU)
+## ⭐ FULL PIVOT — Outcome Foundry / OaaS (SSOT Batch 5 — TERBARU & KANONIK)
 > **Masalah niche:** menjual "skill agentik" (`.zip`) hanya laku ke pengguna Genspark/Claude →
 > pasar kecil, mudah ditiru, asing bagi pembeli mainstream → **susah dimonetisasi**.
 >
-> **Pivot kanonik:** 36 skill = **mesin**; yang dijual ke pasar = **HASIL/outcome** (aplikasi &
-> sistem bisnis yang langsung jalan) untuk **30 juta+ UMKM/SMB Indonesia**. Kategori baru:
-> **"Outcome Foundry" / AI Business Builder lokal**. Setiap aset di-*productize* menjadi
-> multi-SKU (DIY skill, langganan SaaS-lite, jasa Done-for-You, lisensi/white-label, kursus).
+> **Pivot dituntaskan (Batch 5):** SparkMind kini **Outcome Foundry** yang menjual
+> **Outcome-as-a-Service (OaaS)** — *hasil bisnis live*, bukan *bahan*. Divalidasi riset pasar
+> 2025–2026 dengan **angka nyata** (Intercom Fin $0.99/resolution, Zendesk $1.50, HubSpot $0.50,
+> Gartner: 30% SaaS enterprise outcome-based by 2025, Fin AI ROI $3.50/$1). Dunia bergeser
+> **per-seat → usage → outcome**, dan *pemenang memakai model HIBRIDA* (base + langganan + jasa)
+> karena pure-outcome punya batas struktural (atribusi & prediktabilitas). Model SparkMind =
+> **Setup (sekali bayar) + Care Plan/AI Staff (langganan) + Done-for-You (jasa)** — persis pola
+> yang divalidasi.
 >
-> Cetak biru lengkap: **`docs/ssot/batch-4-repositioning/`**
-> - **B4-00** Index · **B4-01** Repositioning · **B4-02** Target-Market (TAM/SAM/SOM + 5 ICP)
-> - **B4-03** Productized-Offers (katalog SKU mainstream + pricing) · **B4-04** Winning-GTM-Broad
-> - **B4-05** Migration-Map (36 skill → produk baru + perubahan kode minimal + roadmap R1–R4)
-> - **B4-06** Outcome-Economy-Thesis (riset pasar 2025–2026: OaaS / RaaS — validasi "jual hasil")
-> - **B4-07** Execution-Log (Sprint R1: blueprint → kode live — rute `/solutions` & `/developers`)
+> **Doc kanonik lengkap:** **`docs/ssot/batch-5-outcome-foundry/`**
+> - **B5-00** Index · **B5-01** OaaS-Research (tren + angka bersumber + pesaing + batas struktural)
+> - **B5-02** Outcome-Foundry-Concept (sistem 3-lapis, 7 prinsip, DoO) · **B5-03** Business-Model (pricing hibrida + unit-economics)
+> - **B5-04** Delivery-Engine (pipeline F0–F7 + proof-of-outcome) · **B5-05** Pivot-Execution-Map (status + roadmap R2–R5) · **B5-06** Gap-Closure & Synthesis
+>
+> Keputusan reposition awal ada di **`docs/ssot/batch-4-repositioning/`** (B4-01..07, diserap Batch 5).
 >
 > **Dual-front:** pintu mainstream (UMKM/SMB) = mesin uang utama; pintu developer (skill DIY) =
 > top-of-funnel & proof. Stack, MoR (OBP), Duitku, D1 **tidak berubah** — hanya kemasan, pasar,

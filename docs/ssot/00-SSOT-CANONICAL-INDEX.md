@@ -70,12 +70,13 @@ dengan menutup gap kompetitor dan menemukan **blue ocean / gold mine** monetisas
 | B3-02 | **[PLAYBOOK-ONBOARDING-KLIEN](batch-3-skala/B3-02-PLAYBOOK-ONBOARDING-KLIEN.md)** | Lead → klien aktif (self-serve & done-for-you) |
 | B3-03 | **[RUNBOOK-INSIDEN](batch-3-skala/B3-03-RUNBOOK-INSIDEN.md)** | Severity, alur respons, komunikasi, post-mortem |
 
-### 1.3 Batch 4 — Strategic Repositioning (`batch-4-repositioning/`) ⭐ TERBARU
+### 1.3 Batch 4 — Strategic Repositioning (`batch-4-repositioning/`)
 
-> **Pivot kanonik:** dari "skill mart niche (user Genspark/Claude)" → **"Outcome Foundry"**
+> **Keputusan pivot:** dari "skill mart niche (user Genspark/Claude)" → **"Outcome Foundry"**
 > untuk **pasar nyata & luas (30 juta+ UMKM/SMB Indonesia)**. Menjawab mandat owner:
 > *monetisasi SETIAP aset di pasar yang luas, sulit ditiru, & winning.* **Batch ini
 > men-supersede framing pasar pada 06/07/08** (lihat catatan upgrade di tiap dok).
+> ➡️ **Diserap & dituntaskan oleh Batch 5.**
 
 | # | Dokumen | Isi |
 |---|---|---|
@@ -88,13 +89,35 @@ dengan menutup gap kompetitor dan menemukan **blue ocean / gold mine** monetisas
 | B4-06 | **[OUTCOME-ECONOMY-THESIS](batch-4-repositioning/B4-06-OUTCOME-ECONOMY-THESIS-DOC.md)** | Tesis pasar (web research): Outcome Economy / OaaS / RaaS — validasi pivot "jual hasil" + moat |
 | B4-07 | **[EXECUTION-LOG](batch-4-repositioning/B4-07-EXECUTION-LOG-DOC.md)** | Log eksekusi Sprint R1: pivot dari blueprint → kode live (`/solutions`, `/developers`) + smoke test |
 
+### 1.4 Batch 5 — Outcome Foundry (`batch-5-outcome-foundry/`) ⭐ TERBARU & KANONIK
+
+> **Pivot dituntaskan:** Batch 4 *memutuskan* arah; **Batch 5 menjadikannya sistem & model
+> bisnis kanonik** — **Outcome-as-a-Service (OaaS)**. Divalidasi riset pasar 2025–2026 dengan
+> **angka nyata** (Intercom Fin $0.99/resolution, Zendesk $1.50, HubSpot $0.50, Gartner 30%
+> outcome-based by 2025, Fin AI ROI $3.50/$1), dirumuskan model uang **hibrida** (Setup +
+> langganan + jasa), mesin delivery + proof-of-outcome, dan diikat ke **kode yang sudah live**
+> (`/solutions`, `/developers`, engine MoR). **Batch 5 = sumber kebenaran framing & model saat ini.**
+
+| # | Dokumen | Isi |
+|---|---|---|
+| B5-00 | **[INDEX](batch-5-outcome-foundry/B5-00-INDEX.md)** | Peta Batch 5 + tesis pivot + non-negotiables |
+| B5-01 | **[OAAS-RESEARCH](batch-5-outcome-foundry/B5-01-OAAS-RESEARCH-DOC.md)** | Riset OaaS/RaaS/Service-as-a-Software 2025–2026: definisi, tren, **angka nyata bersumber**, pesaing, batas struktural |
+| B5-02 | **[OUTCOME-FOUNDRY-CONCEPT](batch-5-outcome-foundry/B5-02-OUTCOME-FOUNDRY-CONCEPT-DOC.md)** | Definisi sistem 3-lapis, 7 prinsip, mesin→outcome, taksonomi, Definition-of-Outcome (DoO) |
+| B5-03 | **[OUTCOME-BUSINESS-MODEL](batch-5-outcome-foundry/B5-03-OUTCOME-BUSINESS-MODEL-DOC.md)** | Pricing hibrida, value-metric, unit-economics, garansi, gating outcome-based |
+| B5-04 | **[OUTCOME-DELIVERY-ENGINE](batch-5-outcome-foundry/B5-04-OUTCOME-DELIVERY-ENGINE-DOC.md)** | Pipeline skill→app (F0–F7), SLA/TTO, proof-of-outcome, gate kualitas, HITL |
+| B5-05 | **[PIVOT-EXECUTION-MAP](batch-5-outcome-foundry/B5-05-PIVOT-EXECUTION-MAP-DOC.md)** | Status kode (live), gap tertutup/terbuka, roadmap R2–R5, DoD pivot |
+| B5-06 | **[GAP-CLOSURE-AND-SYNTHESIS](batch-5-outcome-foundry/B5-06-GAP-CLOSURE-AND-SYNTHESIS-DOC.md)** | Sintesis Batch 1–5, peta supersede, gap masih terbuka, satu kalimat kanonik |
+
 ---
 
 ## 2. Ringkasan eksekutif (TL;DR)
 
-**SparkMind-OBP** adalah **marketplace 36 sovereign skill agentik** yang dijual sebagai
-**produk digital** (file ZIP `SKILL.md`), dengan **Oasis BI Pro (OBP)** sebagai
-**Merchant-of-Record (MoR)** dan **Duitku** sebagai payment gateway (mode PRODUCTION, uang riil).
+**SparkMind** adalah **Outcome Foundry untuk UMKM/SMB Indonesia** — pabrik yang mengubah
+masalah bisnis menjadi **hasil yang sudah jadi & jalan** (aplikasi, otomasi, sistem) sebagai
+**Outcome-as-a-Service (OaaS)**. **36 sovereign skill = mesin**; yang dijual ke pasar =
+**outcome** (paket hibrida: Setup + langganan + jasa). Pembayaran lokal **QRIS/VA** lewat
+**Oasis BI Pro (OBP)** sebagai **Merchant-of-Record (MoR)** via **Duitku** (PRODUCTION, uang riil).
+Jalur developer (skill mentah) tetap ada sebagai **proof & top-of-funnel** di `/developers`.
 
 - **Status:** ✅ PRODUCTION LIVE — https://sparkmind-obp.pages.dev
 - **Stack:** 100% Cloudflare-Native (Hono + Pages + D1) — ZERO VPS.
