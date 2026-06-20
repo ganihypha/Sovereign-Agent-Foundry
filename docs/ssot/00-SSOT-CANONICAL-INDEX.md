@@ -70,6 +70,22 @@ dengan menutup gap kompetitor dan menemukan **blue ocean / gold mine** monetisas
 | B3-02 | **[PLAYBOOK-ONBOARDING-KLIEN](batch-3-skala/B3-02-PLAYBOOK-ONBOARDING-KLIEN.md)** | Lead → klien aktif (self-serve & done-for-you) |
 | B3-03 | **[RUNBOOK-INSIDEN](batch-3-skala/B3-03-RUNBOOK-INSIDEN.md)** | Severity, alur respons, komunikasi, post-mortem |
 
+### 1.3 Batch 4 — Strategic Repositioning (`batch-4-repositioning/`) ⭐ TERBARU
+
+> **Pivot kanonik:** dari "skill mart niche (user Genspark/Claude)" → **"Outcome Foundry"**
+> untuk **pasar nyata & luas (30 juta+ UMKM/SMB Indonesia)**. Menjawab mandat owner:
+> *monetisasi SETIAP aset di pasar yang luas, sulit ditiru, & winning.* **Batch ini
+> men-supersede framing pasar pada 06/07/08** (lihat catatan upgrade di tiap dok).
+
+| # | Dokumen | Isi |
+|---|---|---|
+| B4-00 | **[INDEX](batch-4-repositioning/B4-00-INDEX.md)** | Kenapa reposition + tesis "jual hasil, bukan bahan" |
+| B4-01 | **[REPOSITIONING](batch-4-repositioning/B4-01-REPOSITIONING-DOC.md)** | Positioning baru, kategori "Outcome Foundry", naming, narasi 2-lapis |
+| B4-02 | **[TARGET-MARKET](batch-4-repositioning/B4-02-TARGET-MARKET-DOC.md)** | TAM/SAM/SOM (30,19 jt UMKM), 5 ICP baru yang membayar |
+| B4-03 | **[PRODUCTIZED-OFFERS](batch-4-repositioning/B4-03-PRODUCTIZED-OFFERS-DOC.md)** | Setiap aset → produk jadi: katalog SKU mainstream + pricing |
+| B4-04 | **[WINNING-GTM-BROAD](batch-4-repositioning/B4-04-WINNING-GTM-BROAD-DOC.md)** | Cara menang di pasar luas: channel, funnel, copy non-teknis, partner |
+| B4-05 | **[MIGRATION-MAP](batch-4-repositioning/B4-05-MIGRATION-MAP-DOC.md)** | 36 skill → produk baru + perubahan kode minimal + roadmap R1–R4 |
+
 ---
 
 ## 2. Ringkasan eksekutif (TL;DR)
@@ -80,9 +96,14 @@ dengan menutup gap kompetitor dan menemukan **blue ocean / gold mine** monetisas
 
 - **Status:** ✅ PRODUCTION LIVE — https://sparkmind-obp.pages.dev
 - **Stack:** 100% Cloudflare-Native (Hono + Pages + D1) — ZERO VPS.
-- **Katalog:** 36 skill, 6 sub-brand, harga Rp 59k–149k, **total nilai katalog Rp 3,124,000**.
+- **Katalog (mesin):** 36 skill, 6 sub-brand, harga Rp 59k–149k, **total nilai katalog Rp 3,124,000**.
 - **Doctrine:** 4-Layer Hybrid Lock (Brand → Merchant → Domain → Compliance).
 - **Diferensiasi:** Indonesia-first, payment lokal (Duitku/QRIS/VA), produk = sistem agentik siap-pakai (bukan sekadar prompt).
+
+> ⭐ **REPOSITIONING (Batch 4):** 36 skill = **mesin**; yang dijual ke pasar = **HASIL/outcome**
+> (app & sistem bisnis yang langsung jalan) ke **30 juta+ UMKM/SMB Indonesia** — bukan hanya
+> niche pengguna Genspark/Claude. Lihat **Batch 4** (§1.3) untuk positioning, target-market,
+> produk, GTM, & migrasi.
 
 ---
 
@@ -128,8 +149,9 @@ Prioritas konflik: **credit-aware (guard) > zero-trust > skill fase > fullstack-
 
 ## 5. Cara memakai SSOT ini
 
-- **Onboarding owner/partner baru** → baca 00 → 01 → 04 → 05.
-- **Keputusan strategis** → 06 → 07 → 08.
+- **Onboarding owner/partner baru** → baca 00 → **B4-00 → B4-01** → 01 → 04 → 05.
+- **Keputusan strategis (pasar luas)** → **B4-01 → B4-02 → B4-03 → B4-04** (lalu 06 → 07 → 08 sbg konteks lama).
+- **Eksekusi reposition** → **B4-05** → 12 → B2 (runbook) → B3 (skala).
 - **Eksekusi rilis** → 10 → 11 → 12.
 - **Audit teknis** → 03 → 04.
 

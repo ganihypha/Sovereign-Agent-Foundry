@@ -13,6 +13,24 @@
 ## Tech Stack
 Hono + Cloudflare Pages + D1 (SQLite) + TypeScript + TailwindCSS (CDN). 100% Cloudflare-Native.
 
+## ⭐ Strategic Repositioning (SSOT Batch 4 — TERBARU)
+> **Masalah niche:** menjual "skill agentik" (`.zip`) hanya laku ke pengguna Genspark/Claude →
+> pasar kecil, mudah ditiru, asing bagi pembeli mainstream → **susah dimonetisasi**.
+>
+> **Pivot kanonik:** 36 skill = **mesin**; yang dijual ke pasar = **HASIL/outcome** (aplikasi &
+> sistem bisnis yang langsung jalan) untuk **30 juta+ UMKM/SMB Indonesia**. Kategori baru:
+> **"Outcome Foundry" / AI Business Builder lokal**. Setiap aset di-*productize* menjadi
+> multi-SKU (DIY skill, langganan SaaS-lite, jasa Done-for-You, lisensi/white-label, kursus).
+>
+> Cetak biru lengkap: **`docs/ssot/batch-4-repositioning/`**
+> - **B4-00** Index · **B4-01** Repositioning · **B4-02** Target-Market (TAM/SAM/SOM + 5 ICP)
+> - **B4-03** Productized-Offers (katalog SKU mainstream + pricing) · **B4-04** Winning-GTM-Broad
+> - **B4-05** Migration-Map (36 skill → produk baru + perubahan kode minimal + roadmap R1–R4)
+>
+> **Dual-front:** pintu mainstream (UMKM/SMB) = mesin uang utama; pintu developer (skill DIY) =
+> top-of-funnel & proof. Stack, MoR (OBP), Duitku, D1 **tidak berubah** — hanya kemasan, pasar,
+> bahasa, & harga.
+
 ## Currently Completed Features
 - ✅ SSR landing, katalog (36 skill, 6 sub-brand), pricing, product detail, about, thank-you.
 - ✅ Checkout → buat order pending + **Duitku POP `createInvoice` MODE PRODUCTION** (signature HMAC-SHA256 via header `x-duitku-signature`).
@@ -30,6 +48,7 @@ Hono + Cloudflare Pages + D1 (SQLite) + TypeScript + TailwindCSS (CDN). 100% Clo
   - **Batch 1 — Fondasi & Produk** (00–13): PRD, Design, Architect, Productionized, Monetization, Strategic, GTM, Runplaybook, Launch, Roadmap, Gap-Analysis.
   - **Batch 2 — Operasional** (`batch-2-operasional/`, B2-00..B2-05): runbooks per-fase, API spec agen, template prompt per role, sprint per session, master architect prompt per session.
   - **Batch 3 — Skala** (`batch-3-skala/`, B3-00..B3-03): metrik AaaS, playbook onboarding klien, runbook insiden.
+  - **⭐ Batch 4 — Strategic Repositioning** (`batch-4-repositioning/`, B4-00..B4-05): repositioning "skill mart → Outcome Foundry", target-market pasar luas (30jt+ UMKM), productized-offers (multi-SKU mainstream), winning-GTM pasar massal, migration-map (aset lama → produk baru). **Men-supersede framing pasar pada 06/07/08.**
 
 ## Functional Entry URIs
 | Method | Path | Keterangan |
@@ -112,4 +131,4 @@ pm2 start ecosystem.config.cjs    # http://localhost:3000
 - **Status**: ✅ **PRODUCTION LIVE** — https://sparkmind-obp.pages.dev
 - **D1**: `sparkmind-obp-production` (`a50feb42-43b0-44df-9fbe-41b1343c948c`), migrations applied (remote).
 - **Secrets**: DUITKU_* terpasang (encrypted) di environment production.
-- **Last Updated**: 2026-06-20 (SSOT Batch 2 Operasional + Batch 3 Skala ditambahkan)
+- **Last Updated**: 2026-06-20 (⭐ SSOT **Batch 4 — Strategic Repositioning** ditambahkan: "skill mart niche → Outcome Foundry" untuk pasar luas 30jt+ UMKM/SMB; positioning/target-market/productized-offers/GTM/migration-map)

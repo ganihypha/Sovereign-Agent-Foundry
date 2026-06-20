@@ -2,6 +2,14 @@
 ## SPARKMIND-OBP · Sovereign Agent Foundry
 
 > SSOT batch 07 · v1.0 · 2026-06-20 · Fokus: cara MENANG — wedge masuk, moat bertahan, unfair advantage
+>
+> ⚠️ **UPGRADE NOTICE (2026-06-20):** Wedge & moat di sini ditulis untuk **pasar niche
+> (developer/builder)**. **SSOT Batch 4** memperluasnya ke **pasar massal UMKM/SMB**: wedge
+> baru = **produk hasil-jadi per vertikal** (mis. BarberKas/Toko Online) + **agency reseller**
+> sebagai pengganda; moat tetap (MoR/compliance, cost edge, doctrine) **plus** moat delivery
+> (akselerasi agent) & data lintas-vertikal. Baca cara-menang yang berlaku di
+> **[B4-04 Winning-GTM-Broad](batch-4-repositioning/B4-04-WINNING-GTM-BROAD-DOC.md)**. Moat
+> teknis di dokumen ini tetap valid sebagai fondasi.
 
 ---
 

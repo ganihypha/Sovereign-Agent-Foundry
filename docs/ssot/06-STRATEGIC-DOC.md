@@ -2,6 +2,14 @@
 ## SPARKMIND-OBP · Sovereign Agent Foundry
 
 > SSOT batch 06 · v1.0 · 2026-06-20 · Fokus: posisi pasar, gap kompetitor, blue ocean / gold mine
+>
+> ⚠️ **UPGRADE NOTICE (2026-06-20):** Positioning di dokumen ini (target "builder & UMKM"
+> via *marketplace skill agentik*) telah **di-reposisi** oleh **SSOT Batch 4**. Framing pasar
+> kini: jual **HASIL/outcome** ke **30 juta+ UMKM/SMB Indonesia** ("Outcome Foundry"), bukan
+> niche pengguna Genspark/Claude. Untuk positioning & analisis pasar yang **berlaku saat ini**,
+> baca **[B4-01 Repositioning](batch-4-repositioning/B4-01-REPOSITIONING-DOC.md)** &
+> **[B4-02 Target-Market](batch-4-repositioning/B4-02-TARGET-MARKET-DOC.md)**. Dokumen 06 ini
+> dipertahankan sebagai **konteks/asal-usul** (gap niche yang memicu reposition).
 
 ---
 

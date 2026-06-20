@@ -2,6 +2,13 @@
 ## SPARKMIND-OBP · Sovereign Agent Foundry
 
 > SSOT batch 04 · v1.0 · 2026-06-20 · Sumber: README (Deployment), `package.json`, `wrangler.jsonc`
+>
+> ℹ️ **CATATAN REPOSITIONING (Batch 4):** Status produksi & operasi di bawah tetap akurat
+> (stack, MoR, Duitku, D1 — **tidak berubah**). Yang berubah adalah **apa yang dijual & ke
+> siapa**: dari "katalog skill" → **"katalog solusi/outcome"** untuk pasar UMKM/SMB. Implikasi
+> ke kode (route `/solutions`, `solutions.ts`, dual-front developer) ada di
+> **[B4-05 Migration-Map](batch-4-repositioning/B4-05-MIGRATION-MAP-DOC.md)**. "Productized" di
+> SSOT kini berarti **kapabilitas → produk jadi yang dimengerti & dibeli pasar luas**.
 
 ---
 

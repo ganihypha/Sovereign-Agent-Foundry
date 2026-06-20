@@ -2,6 +2,14 @@
 ## SPARKMIND-OBP · Sovereign Agent Foundry
 
 > SSOT batch 08 · v1.0 · 2026-06-20 · Fokus: dari "menang" → **mendominasi** kategori
+>
+> ⚠️ **UPGRADE NOTICE (2026-06-20):** Kategori yang didominasi diperluas oleh **SSOT Batch 4**:
+> dari "Sovereign Agent Foundry (niche)" → **"Outcome Foundry / AI Business Builder lokal"**
+> untuk pasar massal. Land-and-expand per sub-brand (§5) tetap relevan tetapi kini dibaca
+> sebagai **vertikal pasar nyata** (jasa lokal, online seller, edukator, sosial) — lihat
+> **[B4-02 §3 ICP](batch-4-repositioning/B4-02-TARGET-MARKET-DOC.md)** &
+> **[B4-03 Productized-Offers](batch-4-repositioning/B4-03-PRODUCTIZED-OFFERS-DOC.md)**.
+> Network effect (marketplace 2-sisi, MoR-aaS, franchise) diperkuat di Batch 4.
 
 ---
 
