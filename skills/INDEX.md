@@ -77,6 +77,10 @@
 | `sovereign-cowork-handoff` | Tulis/baca `HANDOFF.md` agar sesi/agent berikutnya resume tanpa ingest ulang. FASE 0 & FASE 7. | "handoff", "tutup sesi", "continuity" |
 | `sovereign-workflow-ops` | SOP operate harian sandbox: build → PM2 → port cleanup → curl test → log → D1 local → backup → README. | "operate", "restart", "build", "backup" |
 
+> 🤖 **gh-aw (Batch 7, bukan skill — implementasi nyata):** GitHub Agentic Workflows di
+> `.github/workflows/` (`daily-sovereign-status`, `sovereign-issue-triage`, `sovereign-ssot-guardian`).
+> Agen AI merawat repo via Actions (Markdown+frontmatter → `.lock.yml`). Doc: `docs/ssot/batch-7-agentic-workflows/B7-00`.
+
 ---
 
 ## 🚀 Tier 5 — Deploy, VCS & Verification (CI/CD gates)

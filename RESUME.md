@@ -6,7 +6,7 @@
 > **Owner:** Reza Estes / Haidar Faras + Gyss (spousal 50/50)
 > **Doctrine:** MASTER-ARCHITECT-PROMPT v8.0 OVERRIDE-LOCK · D-1 Truth-Lock · Indonesia-first · Credit-aware
 > **Repo kanonik (SSOT):** https://github.com/ganihypha/Sovereign-Agent-Foundry · branch `main`
-> **Update terakhir:** 2026-06-21
+> **Update terakhir:** 2026-06-21 (Batch 7 — GitHub Agentic Workflows / gh-aw)
 
 ---
 
@@ -44,10 +44,15 @@ Merchant-of-Record (Duitku) yang patuh.
 - ✅ Halaman legal (`/legal/:slug` — terms/refund/privacy/compliance), `/orders`, `/admin`.
 - ✅ **39 skill** lengkap di `skills/` (lihat `skills/INDEX.md`).
 - ✅ **SSOT canonical docs** 00–13 + Batch 2–5 di `docs/ssot/`.
-- ✅ **🆕 AI Orchestration A2A (Batch 6) LIVE** — orchestrator nyata yang menyatukan
+- ✅ **AI Orchestration A2A (Batch 6) LIVE** — orchestrator nyata yang menyatukan
   **LangChain (tools) + LangGraph (state machine + HITL) + CrewAI (multi-agent)** dalam 1 service
   FastAPI/Docker di HF Space, dipanggil lewat **edge gateway** Hono `POST /api/orchestrate`
   (proxy + HITL gate). Verified end-to-end dengan LLM nyata (Groq llama-3.3-70b).
+- ✅ **🆕 GitHub Agentic Workflows / gh-aw (Batch 7)** — 3 workflow agentik (Markdown+frontmatter)
+  di `.github/workflows/` (`daily-sovereign-status`, `sovereign-issue-triage`, `sovereign-ssot-guardian`)
+  + shared import `sovereign-guardrails.md`. Frontmatter tervalidasi sesuai spec resmi gh-aw,
+  patuh Truth-Lock + HITL + safe-outputs. SSOT: `docs/ssot/batch-7-agentic-workflows/B7-00`.
+  ⚠️ Aktivasi (compile `.lock.yml` + secret engine AI) = HITL (butuh akun + kuota owner).
 
 ---
 
@@ -80,6 +85,29 @@ npx wrangler pages secret put ORCH_HITL_TOKEN   # token approval HITL
 - ❌ **All-Access Bundle 990k** belum jadi SKU+offer (T4, P0).
 - ❌ Custom domain belum di-bind (T5, P1).
 - ⚠️ Orchestrator A2A LIVE, tapi `ORCH_URL`/`ORCH_HITL_TOKEN` belum di-set sebagai **secret production** CF Pages (T15 — butuh BYOK CF, lihat di atas).
+- ⚠️ **gh-aw (Batch 7)** workflow sudah ada di repo, tapi belum di-`compile` jadi `.lock.yml` & belum punya secret engine AI → belum ada run nyata di Actions (T16 — butuh akun GitHub + kuota AI owner = HITL).
+
+---
+
+## 🤖 GITHUB AGENTIC WORKFLOWS (gh-aw) — Batch 7
+
+**Apa:** agen AI yang berjalan di GitHub Actions, ditulis dalam Markdown+frontmatter
+(di-compile jadi `*.lock.yml`). Merawat REPO (beda dari Batch 6 yang merawat PRODUK).
+
+**File (`.github/workflows/`):**
+- `daily-sovereign-status.md` — `schedule:daily` → issue status+gap P0+next steps (continuity).
+- `sovereign-issue-triage.md` — issue/`/triage` → label area+prioritas + flag HITL.
+- `sovereign-ssot-guardian.md` — push `skills|docs`/weekly → draft-PR perbaikan drift SSOT.
+- `shared/sovereign-guardrails.md` — import: tools+network+6 aturan non-negotiable.
+
+**Aktivasi (HITL — owner):**
+```bash
+gh extension install github/gh-aw
+gh secret set COPILOT_GITHUB_TOKEN     # atau ANTHROPIC/OPENAI/GEMINI_API_KEY
+gh aw compile && git add .github/workflows && git commit -m "chore(gh-aw): compile" && git push
+gh aw run daily-sovereign-status
+```
+**SSOT:** `docs/ssot/batch-7-agentic-workflows/B7-00-GITHUB-AGENTIC-WORKFLOWS-DOC.md`
 
 ---
 
@@ -98,6 +126,7 @@ npx wrangler pages secret put ORCH_HITL_TOKEN   # token approval HITL
 | T7 | Halaman **Done-for-You** + intake (polish) | 🟠 P1 | `gtm-engineering` |
 | T8 | Halaman **kebijakan** (refund/privasi-PDP/terms) (polish) | 🟠 P1 | `specialists`, `zero-trust` |
 | T15 | **Wire orchestrator ke production**: set secret `ORCH_URL` + `ORCH_HITL_TOKEN` di CF Pages, tambah set `GROQ_API_KEY` di HF Space (✅ sudah), UI tipis `/foundry` panggil `/api/orchestrate` | 🟠 P1 | `cf-byok-deploy`, `langgraph-statemachine`, `crewai-swarm`, `langchain-tools` |
+| T16 | **Aktifkan gh-aw (Batch 7)**: `gh extension install github/gh-aw` → set secret engine AI → `gh aw compile` (.lock.yml) → push → `gh aw run` | 🟠 P1 | `github-push`, `workflow-ops`, `orchestration-patterns` |
 
 **DoD Sprint 1:** pembeli bisa beli → bayar → unduh file nyata; bundle 990k tampil.
 
@@ -134,6 +163,8 @@ npx wrangler pages secret put ORCH_HITL_TOKEN   # token approval HITL
 | Monetisasi | `docs/ssot/05-MONETIZATION-DOC.md` |
 | Backlog / next | `docs/ssot/12-TODO-ROADMAP-DOC.md` |
 | Pivot Outcome Foundry | `docs/ssot/batch-5-outcome-foundry/` (B5-00 … B5-06) |
+| AI Orchestration A2A | `docs/ssot/batch-6-ai-orchestration/B6-00` |
+| GitHub Agentic Workflows (gh-aw) | `docs/ssot/batch-7-agentic-workflows/B7-00` + `.github/workflows/README.md` |
 | Cara operasi sandbox | `docs/SETUP-GUIDE.md` + skill `workflow-ops` |
 | Rute aplikasi lengkap | `README.md` |
 

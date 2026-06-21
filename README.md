@@ -131,9 +131,14 @@ pm2 start ecosystem.config.cjs    # http://localhost:3000
 - ✅ **Halaman `/setup`** — master super crystal-clear, cara setup & pakai skill (<10 menit, anti-error). Sumber: `docs/SETUP-GUIDE.md`.
 - ✅ Folder `skills/` kanonik (38 SKILL.md) disertakan di repo sebagai source-of-truth produk.
 
+## AI Orchestration & Agentic Workflows
+- **Batch 6 — A2A Orchestrator (LIVE):** LangChain + LangGraph + CrewAI di HF Space, dipanggil edge Hono `POST /api/orchestrate` (proxy + HITL gate). SSOT: `docs/ssot/batch-6-ai-orchestration/B6-00`.
+- **Batch 7 — GitHub Agentic Workflows (gh-aw):** 3 workflow agentik (Markdown+frontmatter) di `.github/workflows/` — `daily-sovereign-status`, `sovereign-issue-triage`, `sovereign-ssot-guardian` + shared `sovereign-guardrails.md`. Patuh Truth-Lock + HITL + safe-outputs. Aktivasi via `gh aw compile` (HITL — butuh akun + secret AI owner). SSOT: `docs/ssot/batch-7-agentic-workflows/B7-00`. Cara pakai: `.github/workflows/README.md`.
+
 ## Features Not Yet Implemented
 - Migrasi file skill dari static asset → **R2** (untuk skala & signed-URL kedaluwarsa).
 - Pengiriman email otomatis (license link) — perlu integrasi REST (Resend/Mailgun).
+- Aktivasi gh-aw: compile `.lock.yml` + set secret engine AI (Copilot/Claude/dst) → run di Actions.
 
 ## Recommended Next Steps
 1. ✅ ~~D1 production + secrets Duitku production~~ (SELESAI).
@@ -148,4 +153,4 @@ pm2 start ecosystem.config.cjs    # http://localhost:3000
 - **Status**: ✅ **PRODUCTION LIVE** — https://sparkmind-obp.pages.dev
 - **D1**: `sparkmind-obp-production` (`a50feb42-43b0-44df-9fbe-41b1343c948c`), migrations applied (remote).
 - **Secrets**: DUITKU_* terpasang (encrypted) di environment production.
-- **Last Updated**: 2026-06-20 (⭐ **Outcome Foundry pivot DIEKSEKUSI**: rute `/solutions` `/developers` `/foundry` live, 9 solusi outcome + 6 SKU baru di engine checkout, Outcome Home jadi beranda; SSOT diperluas **B4-06 Outcome-Economy-Thesis** + **B4-07 Execution-Log**; index 00 & B4-00 + notice 06/07/08 disinkronkan)
+- **Last Updated**: 2026-06-21 (🤖 **Batch 7 — GitHub Agentic Workflows / gh-aw**: 3 workflow agentik Markdown+frontmatter di `.github/workflows/` + shared guardrails, SSOT B7-00; deep-research dari spec resmi gh-aw [frontmatter/quick-start/multi-repo] + githubnext/agentics; clone-verify repo GitHub + HF Space; RESUME/INDEX disinkronkan)
