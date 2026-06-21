@@ -6,7 +6,7 @@
 > **Owner:** Reza Estes / Haidar Faras + Gyss (spousal 50/50)
 > **Doctrine:** MASTER-ARCHITECT-PROMPT v8.0 OVERRIDE-LOCK · D-1 Truth-Lock · Indonesia-first · Credit-aware
 > **Repo kanonik (SSOT):** https://github.com/ganihypha/Sovereign-Agent-Foundry · branch `main`
-> **Update terakhir:** 2026-06-21 (Batch 8 — ECC Reference & Upgrade / deep-dive `affaan-m/ECC`)
+> **Update terakhir:** 2026-06-21 (Batch 9 — Eksekusi R6: Skill Authoring Standard + Prompt-Defense Baseline)
 
 ---
 
@@ -44,11 +44,22 @@ Merchant-of-Record (Duitku) yang patuh.
 - ✅ Halaman legal (`/legal/:slug` — terms/refund/privacy/compliance), `/orders`, `/admin`.
 - ✅ **39 skill** lengkap di `skills/` (lihat `skills/INDEX.md`).
 - ✅ **SSOT canonical docs** 00–13 + Batch 2–8 di `docs/ssot/`.
-- ✅ **🆕 ECC Reference & Upgrade (Batch 8)** — deep-dive repo `affaan-m/ECC` ("Everything Claude
+- ✅ **🆕 Eksekusi R6 (Batch 9)** — turunkan blueprint Batch 8 jadi aksi nyata:
+  - ✅ **R6-1 Skill Authoring Standard** — `docs/ssot/standards/SKILL-AUTHORING-STANDARD.md`:
+    frontmatter wajib + **4 field baru khas SAF** (`outcome`, `cloudflare-native`, `hitl-gate`,
+    `drift-prone`), struktur `references/` progresif, **hasil audit 39 skill** (name/desc/ver/owner
+    100%; `skill_category` 62% → 15 skill perlu dilengkapi = sub-tugas R6-1b), checklist review.
+  - ✅ **R6-2 Prompt-Defense Baseline** — `sovereign-zero-trust` v2.0.0 (ZT-8 prompt-defense 5
+    aturan + ZT-9 HITL gate + frontmatter patuh standar penuh), blok `[PROMPT-DEFENSE]` di **B2-05**
+    (header sesi), **§8 keamanan** di `04-PRODUCTIONIZED`. **Lindungi kunci Duitku** + lethal-trifecta.
+  - 📋 **R6-3 / R6-4 = spec siap-eksekusi** (dokumen aman): `standards/R6-3-EVAL-LOOP-SPEC.md`
+    (trace D1 + verifier + playbook) & `standards/R6-4-AGENTSHIELD-SKU-SPEC.md`. ⚠️ Eksekusi kode
+    (schema D1, `/security-audit`, pricing, customer-facing) **menunggu HITL owner**.
+- ✅ **ECC Reference & Upgrade (Batch 8)** — deep-dive repo `affaan-m/ECC` ("Everything Claude
   Code": 211K★, 271 skills, 67 agents, 92 commands, 114 rules) sebagai **referensi rekayasa**.
   Hasil: 4 dokumen kanonik (B8-00…B8-03) — deep-dive, gap-map ECC vs SAF (EG1–EG10), & roadmap
-  R6 (RICE) untuk upgrade. **Moat lokal ditegaskan** (Indonesia-first, MoR, outcome, edge).
-  SSOT: `docs/ssot/batch-8-ecc-reference/`. ⚠️ Truth-Lock: analisis+blueprint saja, belum eksekusi kode R6.
+  R6 (RICE). **Moat lokal ditegaskan** (Indonesia-first, MoR, outcome, edge).
+  SSOT: `docs/ssot/batch-8-ecc-reference/`.
 - ✅ **AI Orchestration A2A (Batch 6) LIVE** — orchestrator nyata yang menyatukan
   **LangChain (tools) + LangGraph (state machine + HITL) + CrewAI (multi-agent)** dalam 1 service
   FastAPI/Docker di HF Space, dipanggil lewat **edge gateway** Hono `POST /api/orchestrate`
@@ -132,8 +143,10 @@ gh aw run daily-sovereign-status
 | T8 | Halaman **kebijakan** (refund/privasi-PDP/terms) (polish) | 🟠 P1 | `specialists`, `zero-trust` |
 | T15 | **Wire orchestrator ke production**: set secret `ORCH_URL` + `ORCH_HITL_TOKEN` di CF Pages, tambah set `GROQ_API_KEY` di HF Space (✅ sudah), UI tipis `/foundry` panggil `/api/orchestrate` | 🟠 P1 | `cf-byok-deploy`, `langgraph-statemachine`, `crewai-swarm`, `langchain-tools` |
 | T16 | **Aktifkan gh-aw (Batch 7)**: `gh extension install github/gh-aw` → set secret engine AI → `gh aw compile` (.lock.yml) → push → `gh aw run` | 🟠 P1 | `github-push`, `workflow-ops`, `orchestration-patterns` |
-| T17 | **R6-1 (Batch 8): Skill Authoring Standard** — buat `docs/ssot/standards/SKILL-AUTHORING-STANDARD.md` + audit frontmatter 40 skill (murni dokumen, aman) | 🔴 P0 | `agent-foundry`, `enterprise-patterns` |
-| T18 | **R6-2 (Batch 8): Prompt-Defense Baseline** — sisipkan ke `sovereign-zero-trust` + B2-05 + 04-PRODUCTIONIZED (murah, lindungi kunci Duitku) | 🔴 P0 | `zero-trust`, `enterprise-patterns` |
+| T17 | ✅ **R6-1 SELESAI: Skill Authoring Standard** — `docs/ssot/standards/SKILL-AUTHORING-STANDARD.md` + audit frontmatter 39 skill (4 field baru: `outcome`, `cloudflare-native`, `hitl-gate`, `drift-prone`) | ✅ DONE | `agent-foundry`, `enterprise-patterns` |
+| T18 | ✅ **R6-2 SELESAI: Prompt-Defense Baseline** — `sovereign-zero-trust` ZT-8/ZT-9 + B2-05 `[PROMPT-DEFENSE]` + 04-PRODUCTIONIZED §8 (lindungi kunci Duitku) | ✅ DONE | `zero-trust`, `enterprise-patterns` |
+| T19 | **R6-3: Eval Loop** — spec siap di `standards/R6-3-EVAL-LOOP-SPEC.md`; eksekusi kode (schema D1 `outcome_traces`) **tunggu HITL** | 🟡 P1 | `verify-rubric`, `cf-byok-deploy` |
+| T20 | **R6-4: AgentShield SKU** — spec siap di `standards/R6-4-AGENTSHIELD-SKU-SPEC.md`; SKU/`/security-audit`/pricing **tunggu HITL** | 🟡 P1 | `zero-trust`, `specialists` |
 
 **DoD Sprint 1:** pembeli bisa beli → bayar → unduh file nyata; bundle 990k tampil.
 
@@ -173,6 +186,7 @@ gh aw run daily-sovereign-status
 | AI Orchestration A2A | `docs/ssot/batch-6-ai-orchestration/B6-00` |
 | GitHub Agentic Workflows (gh-aw) | `docs/ssot/batch-7-agentic-workflows/B7-00` + `.github/workflows/README.md` |
 | **ECC Reference & Upgrade (Batch 8)** | `docs/ssot/batch-8-ecc-reference/` (B8-00 … B8-03) — deep-dive `affaan-m/ECC` + roadmap R6 |
+| **Standar & Spec R6 (Batch 9)** | `docs/ssot/standards/` — `SKILL-AUTHORING-STANDARD.md` (R6-1 ✅), `R6-3-EVAL-LOOP-SPEC.md`, `R6-4-AGENTSHIELD-SKU-SPEC.md` |
 | Cara operasi sandbox | `docs/SETUP-GUIDE.md` + skill `workflow-ops` |
 | Rute aplikasi lengkap | `README.md` |
 

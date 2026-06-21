@@ -155,7 +155,7 @@
 - [x] B8-00 INDEX, B8-01 DEEP-DIVE, B8-02 GAP-MAP, B8-03 BLUEPRINT dibuat.
 - [x] Moat lokal ditegaskan (B8-02 §4) — tidak hilang saat adopsi.
 - [x] Roadmap R6 (RICE) + DoD per item.
-- [ ] Eksekusi R6-1/R6-2 (P0) — **sprint berikutnya, butuh konfirmasi owner**.
+- [x] Eksekusi R6-1/R6-2 (P0) — **SELESAI 2026-06-21** (Batch 9). R6-1: `standards/SKILL-AUTHORING-STANDARD.md`; R6-2: `sovereign-zero-trust` ZT-8/ZT-9 + B2-05 + 04-PRODUCTIONIZED §8. R6-3/R6-4 spec siap, kode tunggu HITL.
 - [x] 00-INDEX & RESUME.md di-update mendaftarkan Batch 8.
 - [x] Push ke GitHub main.
 

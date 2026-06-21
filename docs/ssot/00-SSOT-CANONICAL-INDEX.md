@@ -126,7 +126,20 @@ dengan menutup gap kompetitor dan menemukan **blue ocean / gold mine** monetisas
 |---|---|---|
 | B7-00 | **[GITHUB-AGENTIC-WORKFLOWS](batch-7-agentic-workflows/B7-00-GITHUB-AGENTIC-WORKFLOWS-DOC.md)** | Konsep gh-aw, 3 workflow, guardrails, aktivasi |
 
-### 1.7 Batch 8 — ECC Reference & Upgrade (`batch-8-ecc-reference/`) ⭐ TERBARU
+### 1.8 Batch 9 — Standar & Eksekusi R6 (`standards/`) ⭐ TERBARU
+
+> **Eksekusi roadmap R6** dari Batch 8 menjadi aksi nyata. **R6-1 & R6-2 SELESAI** (murni
+> dokumen/skill — aman, credit-aware). **R6-3 & R6-4 = spec siap-eksekusi** (kode menunggu HITL
+> owner: schema D1, pricing, customer-facing). Menutup gap EG1/EG2/EG10 (authoring) & EG9/EG3 (security).
+
+| # | Dokumen | Isi |
+|---|---|---|
+| R6-1 | **[SKILL-AUTHORING-STANDARD](standards/SKILL-AUTHORING-STANDARD.md)** ✅ | Frontmatter wajib + 4 field khas SAF (`outcome`/`cloudflare-native`/`hitl-gate`/`drift-prone`), struktur `references/`, audit 39 skill, checklist review |
+| R6-2 | _(diterapkan)_ ✅ | Prompt-Defense Baseline → `sovereign-zero-trust` ZT-8/ZT-9 + `B2-05 [PROMPT-DEFENSE]` + `04-PRODUCTIONIZED §8` |
+| R6-3 | **[R6-3-EVAL-LOOP-SPEC](standards/R6-3-EVAL-LOOP-SPEC.md)** 📋 | Trace D1 + verifier (ikat DoO B5-02) + promoted playbook — spec, kode tunggu HITL |
+| R6-4 | **[R6-4-AGENTSHIELD-SKU-SPEC](standards/R6-4-AGENTSHIELD-SKU-SPEC.md)** 📋 | SKU keamanan done-for-you + `/security-audit` — spec, pricing/customer-facing tunggu HITL |
+
+### 1.7 Batch 8 — ECC Reference & Upgrade (`batch-8-ecc-reference/`)
 
 > **Deep-dive repo referensi `affaan-m/ECC`** ("Everything Claude Code": 211K★, 271 skills,
 > 67 agents, 92 commands, 114 rules) sebagai **cermin rekayasa & kompetitif**. Hasil: analisis
