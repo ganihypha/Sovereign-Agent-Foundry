@@ -13,6 +13,10 @@ export type Bindings = {
   RESEND_FROM?: string      // alamat pengirim email lisensi
   ADMIN_TOKEN?: string      // proteksi dashboard admin (T10) — secret
   R2?: R2Bucket             // penyimpanan file skill (T2) — opsional
+  // ── AI Orchestration (A2A) — backend HF Space: LangChain+LangGraph+CrewAI ──
+  ORCH_URL?: string         // base URL HF Space orchestrator, mis. https://elmatador0197-ai-orchestrationl.hf.space
+  ORCH_API_KEY?: string     // bearer token opsional ke orchestrator — secret
+  ORCH_HITL_TOKEN?: string  // token approval HITL (manusia) untuk gate sensitif — secret
 }
 
 export interface Product {

@@ -325,6 +325,84 @@ app.get('/api/health', (c) =>
   c.json({ status: 'ok', service: 'sparkmind-obp', products: PRODUCTS.length })
 )
 
+/* ───────────────── AI Orchestration gateway (A2A) — /api/orchestrate ─────────────────
+ * Edge gateway untuk backend orchestrator di HF Space yang menyatukan
+ * LangChain (tools) + LangGraph (state machine + HITL) + CrewAI (multi-agent).
+ *
+ * Peran gateway (sesuai doctrine Sovereign):
+ *  1) PROXY  — teruskan {objective} ke ORCH_URL/orchestrate.
+ *  2) HITL GATE — deteksi tugas sensitif (payment/legal/customer/secret/deploy).
+ *     Jika sensitif & approver TIDAK menyertakan ORCH_HITL_TOKEN yang benar →
+ *     tolak dengan 202 {status:"hitl_required"} (manusia harus approve).
+ *     Jika token benar → kirim force_approve:true ke orchestrator.
+ *  3) GRACEFUL — jika ORCH_URL belum diset → 503 informatif (bukan crash).
+ */
+const HITL_TRIGGERS = [
+  'bayar', 'payment', 'transfer', 'legal', 'kontrak', 'contract',
+  'kirim email', 'send email', 'delete', 'hapus', 'secret', 'api key',
+  'deploy prod', 'production', 'refund', 'invoice'
+]
+function orchestrateNeedsHITL(objective: string): boolean {
+  const o = (objective || '').toLowerCase()
+  return HITL_TRIGGERS.some((t) => o.includes(t))
+}
+
+app.post('/api/orchestrate', async (c) => {
+  const base = c.env.ORCH_URL
+  if (!base) {
+    return c.json({
+      status: 'unavailable',
+      error: 'ORCH_URL belum diset. Set secret ke HF Space orchestrator.',
+      hint: 'wrangler pages secret put ORCH_URL  → https://elmatador0197-ai-orchestrationl.hf.space'
+    }, 503)
+  }
+
+  let body: any = {}
+  try { body = await c.req.json() } catch { /* ignore */ }
+  const objective: string = (body?.objective || '').toString().trim()
+  if (!objective) return c.json({ status: 'error', error: 'objective wajib diisi' }, 400)
+
+  // ── HITL gate (edge) ──
+  const sensitive = orchestrateNeedsHITL(objective)
+  const provided = c.req.header('x-hitl-token') || body?.hitl_token || ''
+  const approverOk = !!c.env.ORCH_HITL_TOKEN && provided === c.env.ORCH_HITL_TOKEN
+  if (sensitive && !approverOk) {
+    return c.json({
+      status: 'hitl_required',
+      message: 'Tugas terdeteksi sensitif — butuh approval manusia.',
+      objective,
+      how_to_approve: 'Kirim ulang dengan header x-hitl-token: <ORCH_HITL_TOKEN>'
+    }, 202)
+  }
+
+  // ── Proxy ke orchestrator ──
+  const headers: Record<string, string> = { 'content-type': 'application/json' }
+  if (c.env.ORCH_API_KEY) headers['authorization'] = `Bearer ${c.env.ORCH_API_KEY}`
+  try {
+    const resp = await fetch(`${base.replace(/\/+$/, '')}/orchestrate`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ objective, force_approve: sensitive ? true : null })
+    })
+    const data = await resp.json().catch(() => ({}))
+    return c.json({ status: 'ok', gateway: 'sparkmind-edge', hitl: sensitive ? 'approved' : 'auto', result: data }, resp.status as any)
+  } catch (e: any) {
+    return c.json({ status: 'error', error: `orchestrator unreachable: ${e?.message || e}` }, 502)
+  }
+})
+
+// Status ringkas orchestrator (proxy health)
+app.get('/api/orchestrate/health', async (c) => {
+  const base = c.env.ORCH_URL
+  if (!base) return c.json({ status: 'unavailable', reason: 'ORCH_URL unset' }, 503)
+  try {
+    const resp = await fetch(`${base.replace(/\/+$/, '')}/health`)
+    return c.json({ status: 'ok', upstream: await resp.json().catch(() => ({})) })
+  } catch (e: any) {
+    return c.json({ status: 'error', error: `${e?.message || e}` }, 502)
+  }
+})
+
 /* ── Download page (UX) — /download/:token render halaman, /api/download/:token JSON ── */
 app.get('/download/:token', (c) =>
   c.render(<DownloadPage token={c.req.param('token')} />, { title: 'Unduh · SparkMind' })
