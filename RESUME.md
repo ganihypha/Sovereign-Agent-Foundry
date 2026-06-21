@@ -6,7 +6,7 @@
 > **Owner:** Reza Estes / Haidar Faras + Gyss (spousal 50/50)
 > **Doctrine:** MASTER-ARCHITECT-PROMPT v8.0 OVERRIDE-LOCK · D-1 Truth-Lock · Indonesia-first · Credit-aware
 > **Repo kanonik (SSOT):** https://github.com/ganihypha/Sovereign-Agent-Foundry · branch `main`
-> **Update terakhir:** 2026-06-21 (Batch 7 — GitHub Agentic Workflows / gh-aw)
+> **Update terakhir:** 2026-06-21 (Batch 8 — ECC Reference & Upgrade / deep-dive `affaan-m/ECC`)
 
 ---
 
@@ -43,7 +43,12 @@ Merchant-of-Record (Duitku) yang patuh.
 - ✅ Delivery produk: skill ZIP via `/static/downloads/:file.zip` + `/setup` guide.
 - ✅ Halaman legal (`/legal/:slug` — terms/refund/privacy/compliance), `/orders`, `/admin`.
 - ✅ **39 skill** lengkap di `skills/` (lihat `skills/INDEX.md`).
-- ✅ **SSOT canonical docs** 00–13 + Batch 2–5 di `docs/ssot/`.
+- ✅ **SSOT canonical docs** 00–13 + Batch 2–8 di `docs/ssot/`.
+- ✅ **🆕 ECC Reference & Upgrade (Batch 8)** — deep-dive repo `affaan-m/ECC` ("Everything Claude
+  Code": 211K★, 271 skills, 67 agents, 92 commands, 114 rules) sebagai **referensi rekayasa**.
+  Hasil: 4 dokumen kanonik (B8-00…B8-03) — deep-dive, gap-map ECC vs SAF (EG1–EG10), & roadmap
+  R6 (RICE) untuk upgrade. **Moat lokal ditegaskan** (Indonesia-first, MoR, outcome, edge).
+  SSOT: `docs/ssot/batch-8-ecc-reference/`. ⚠️ Truth-Lock: analisis+blueprint saja, belum eksekusi kode R6.
 - ✅ **AI Orchestration A2A (Batch 6) LIVE** — orchestrator nyata yang menyatukan
   **LangChain (tools) + LangGraph (state machine + HITL) + CrewAI (multi-agent)** dalam 1 service
   FastAPI/Docker di HF Space, dipanggil lewat **edge gateway** Hono `POST /api/orchestrate`
@@ -127,6 +132,8 @@ gh aw run daily-sovereign-status
 | T8 | Halaman **kebijakan** (refund/privasi-PDP/terms) (polish) | 🟠 P1 | `specialists`, `zero-trust` |
 | T15 | **Wire orchestrator ke production**: set secret `ORCH_URL` + `ORCH_HITL_TOKEN` di CF Pages, tambah set `GROQ_API_KEY` di HF Space (✅ sudah), UI tipis `/foundry` panggil `/api/orchestrate` | 🟠 P1 | `cf-byok-deploy`, `langgraph-statemachine`, `crewai-swarm`, `langchain-tools` |
 | T16 | **Aktifkan gh-aw (Batch 7)**: `gh extension install github/gh-aw` → set secret engine AI → `gh aw compile` (.lock.yml) → push → `gh aw run` | 🟠 P1 | `github-push`, `workflow-ops`, `orchestration-patterns` |
+| T17 | **R6-1 (Batch 8): Skill Authoring Standard** — buat `docs/ssot/standards/SKILL-AUTHORING-STANDARD.md` + audit frontmatter 40 skill (murni dokumen, aman) | 🔴 P0 | `agent-foundry`, `enterprise-patterns` |
+| T18 | **R6-2 (Batch 8): Prompt-Defense Baseline** — sisipkan ke `sovereign-zero-trust` + B2-05 + 04-PRODUCTIONIZED (murah, lindungi kunci Duitku) | 🔴 P0 | `zero-trust`, `enterprise-patterns` |
 
 **DoD Sprint 1:** pembeli bisa beli → bayar → unduh file nyata; bundle 990k tampil.
 
@@ -165,6 +172,7 @@ gh aw run daily-sovereign-status
 | Pivot Outcome Foundry | `docs/ssot/batch-5-outcome-foundry/` (B5-00 … B5-06) |
 | AI Orchestration A2A | `docs/ssot/batch-6-ai-orchestration/B6-00` |
 | GitHub Agentic Workflows (gh-aw) | `docs/ssot/batch-7-agentic-workflows/B7-00` + `.github/workflows/README.md` |
+| **ECC Reference & Upgrade (Batch 8)** | `docs/ssot/batch-8-ecc-reference/` (B8-00 … B8-03) — deep-dive `affaan-m/ECC` + roadmap R6 |
 | Cara operasi sandbox | `docs/SETUP-GUIDE.md` + skill `workflow-ops` |
 | Rute aplikasi lengkap | `README.md` |
 

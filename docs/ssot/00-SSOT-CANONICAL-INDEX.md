@@ -108,6 +108,40 @@ dengan menutup gap kompetitor dan menemukan **blue ocean / gold mine** monetisas
 | B5-05 | **[PIVOT-EXECUTION-MAP](batch-5-outcome-foundry/B5-05-PIVOT-EXECUTION-MAP-DOC.md)** | Status kode (live), gap tertutup/terbuka, roadmap R2–R5, DoD pivot |
 | B5-06 | **[GAP-CLOSURE-AND-SYNTHESIS](batch-5-outcome-foundry/B5-06-GAP-CLOSURE-AND-SYNTHESIS-DOC.md)** | Sintesis Batch 1–5, peta supersede, gap masih terbuka, satu kalimat kanonik |
 
+### 1.5 Batch 6 — AI Orchestration A2A (`batch-6-ai-orchestration/`)
+
+> Orchestrator nyata: **LangChain (tools) + LangGraph (state+HITL) + CrewAI (multi-agent)**
+> di HF Space, dipanggil via edge gateway Hono `POST /api/orchestrate`.
+
+| # | Dokumen | Isi |
+|---|---|---|
+| B6-00 | **[AI-ORCHESTRATION-A2A](batch-6-ai-orchestration/B6-00-AI-ORCHESTRATION-A2A-DOC.md)** | Arsitektur A2A, edge gateway, HITL gate, verifikasi end-to-end |
+
+### 1.6 Batch 7 — GitHub Agentic Workflows (`batch-7-agentic-workflows/`)
+
+> Workflow agentik (gh-aw) yang **merawat REPO** (beda dari Batch 6 yang merawat PRODUK):
+> status harian, issue triage, SSOT guardian — patuh Truth-Lock + HITL + safe-outputs.
+
+| # | Dokumen | Isi |
+|---|---|---|
+| B7-00 | **[GITHUB-AGENTIC-WORKFLOWS](batch-7-agentic-workflows/B7-00-GITHUB-AGENTIC-WORKFLOWS-DOC.md)** | Konsep gh-aw, 3 workflow, guardrails, aktivasi |
+
+### 1.7 Batch 8 — ECC Reference & Upgrade (`batch-8-ecc-reference/`) ⭐ TERBARU
+
+> **Deep-dive repo referensi `affaan-m/ECC`** ("Everything Claude Code": 211K★, 271 skills,
+> 67 agents, 92 commands, 114 rules) sebagai **cermin rekayasa & kompetitif**. Hasil: analisis
+> kanonik + gap-map (EG1–EG10) + roadmap upgrade R6 (RICE). **Menambah lensa upgrade; TIDAK
+> men-supersede** doctrine inti atau framing OaaS (Batch 5). Moat lokal (Indonesia-first, MoR,
+> outcome, edge) ditegaskan agar tidak hilang saat adopsi. ⚠️ Truth-Lock: analisis+blueprint
+> saja — eksekusi kode R6 menunggu sprint berikut + HITL owner.
+
+| # | Dokumen | Isi |
+|---|---|---|
+| B8-00 | **[INDEX](batch-8-ecc-reference/B8-00-INDEX.md)** | Peta Batch 8 + tesis adopsi 5-poin + non-negotiables |
+| B8-01 | **[ECC-DEEP-DIVE](batch-8-ecc-reference/B8-01-ECC-DEEP-DIVE-DOC.md)** | Apa itu ECC, skala terverifikasi, arsitektur 5-lapis, security, model bisnis berlapis |
+| B8-02 | **[GAP-MAP ECC vs SAF](batch-8-ecc-reference/B8-02-GAP-MAP-ECC-vs-SAF-DOC.md)** | Gap EG1–EG10, pemetaan → SSOT, **6 moat unik kita**, matriks adopt/adapt/reject |
+| B8-03 | **[UPGRADE-BLUEPRINT](batch-8-ecc-reference/B8-03-UPGRADE-BLUEPRINT-DOC.md)** | Roadmap R6 (R6-1…R6-6) RICE + spec per item + upgrade dok SSOT + next steps |
+
 ---
 
 ## 2. Ringkasan eksekutif (TL;DR)
